@@ -1,113 +1,187 @@
-.container {
-  padding: 15px;
-  background: #0f0f0f;
-  color: white;
-  min-height: 100vh;
-  font-family: sans-serif;
+/* 🔥 БАЗА */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
 }
 
+.container {
+  padding: 12px;
+}
+
+/* 🔥 ЗАГОЛОВОК */
 .title {
   font-size: 22px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-.grid {
-  display: grid;
-  gap: 10px;
-}
-
+/* 🔥 СЕТКА (АДАПТИВ) */
 .grid.products {
-  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
 }
 
-@media (min-width: 600px) {
-  .grid.products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.card {
-  background: #1c1c1c;
-  border-radius: 12px;
-  padding: 12px;
-  cursor: pointer;
+/* 🔥 КАРТОЧКА */
+.card.product {
+  background: #151515;
+  border-radius: 16px;
+  overflow: hidden;
   transition: 0.2s;
+  cursor: pointer;
+  position: relative;
 }
 
-.card:hover {
-  transform: scale(1.02);
+.card.product:hover {
+  transform: translateY(-3px);
 }
 
-.card.big {
-  text-align: center;
-  font-size: 18px;
-}
-
-.product img {
+/* 🔥 КАРТИНКА */
+.card.product img {
   width: 100%;
-  border-radius: 8px;
+  height: 140px;
+  object-fit: cover;
 }
 
+/* 🔥 ИНФА */
 .info {
-  margin-top: 5px;
+  padding: 10px;
+}
+
+.info p {
+  font-size: 14px;
+  margin: 0;
 }
 
 .info span {
+  font-size: 13px;
   color: #aaa;
-  font-size: 14px;
 }
 
+/* 🔥 ЦЕНА */
+.price {
+  color: #fff;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* 🔥 НАЛИЧИЕ */
+.stock {
+  color: #ff3b30;
+  font-size: 12px;
+}
+
+/* 🔥 КНОПКА ДОБАВИТЬ */
+.add-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #ff3b30;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: white;
+  font-size: 18px;
+}
+
+/* 🔥 КАТЕГОРИИ */
+.categories {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+.category {
+  background: #1c1c1c;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* 🔥 КНОПКА НАЗАД */
+.back {
+  background: none;
+  border: none;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* 🔥 СТРАНИЦА ТОВАРА */
 .product-page {
-  text-align: center;
+  padding-bottom: 80px;
 }
 
 .big-img {
   width: 100%;
-  border-radius: 12px;
-}
-
-.price {
-  font-size: 18px;
-  margin: 5px 0;
+  border-radius: 16px;
 }
 
 .desc {
   color: #aaa;
+  font-size: 14px;
 }
 
-.add {
+/* 🔥 КНОПКА ДОБАВИТЬ */
+.add-main {
   margin-top: 10px;
-  padding: 12px;
   width: 100%;
-  background: #4caf50;
+  padding: 14px;
+  border-radius: 12px;
   border: none;
-  border-radius: 10px;
+  background: #ff3b30;
   color: white;
+  font-size: 16px;
 }
 
-.back {
-  margin-bottom: 10px;
-  background: none;
-  border: none;
-  color: #aaa;
-}
-
+/* 🔥 КОРЗИНА ПЛАВАЮЩАЯ */
 .cart-bar {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
   background: #1c1c1c;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.cart-bar button {
-  background: #4caf50;
+/* 🔥 КОРЗИНА МОДАЛКА */
+.cart-modal {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  height: 85%;
+  background: #111;
+  border-radius: 20px 20px 0 0;
+  transition: 0.3s;
+  padding: 15px;
+}
+
+.cart-modal.open {
+  bottom: 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* 🔥 КНОПКА ОФОРМЛЕНИЯ */
+.checkout {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
   border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
+  background: #ff3b30;
   color: white;
+  font-size: 16px;
 }
