@@ -8,7 +8,7 @@ const tobaccoData = {
   ],
   MustHave: [
     { id: 3, name: "Pinkman", price: 1700 },
-    { id: 4, name: "Space Flavor", price: 1650 }
+    { id: 4, name: "Space Flavor", price: 1690 }
   ]
 };
 
@@ -69,7 +69,7 @@ function App() {
 
         {screen === "home" && (
             <>
-              <h2>Категории</h2>
+              <h2>Категорииbbbb</h2>
 
               <div className="grid">
                 <div className="card" onClick={() => setScreen("tobacco")}>
