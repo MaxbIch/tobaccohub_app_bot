@@ -48,12 +48,16 @@ function App() {
   const sendOrder = () => {
     const user = tg?.initDataUnsafe?.user;
 
+    console.log("USER:", user); // 👈 добавили для проверки
+
     const order = {
-      user: {
-        id: user?.id,
-        name: user?.first_name,
-        username: user?.username
-      },
+      user: user
+          ? {
+            id: user.id,
+            name: user.first_name,
+            username: user.username
+          }
+          : null,
       items: cart,
       total: getTotal()
     };
