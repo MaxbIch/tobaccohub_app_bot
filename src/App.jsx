@@ -1,12 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-
-const tg = window.Telegram?.WebApp;
-
-if (tg) {
-  tg.ready();
-  tg.expand();
-}
 
 const tobaccoData = {
   Darkside: [
@@ -16,9 +9,6 @@ const tobaccoData = {
   MustHave: [
     { id: 3, name: "Pinkman", price: 1700 },
     { id: 4, name: "Space Flavor", price: 1650 }
-  ],
-  Tangiers: [
-    { id: 5, name: "Cane Mint", price: 2000 }
   ]
 };
 
@@ -26,6 +16,18 @@ function App() {
   const [screen, setScreen] = useState("home");
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [cart, setCart] = useState([]);
+
+  const tg = window.Telegram?.WebApp;
+
+  useEffect(() => {
+    if (tg) {
+      tg.ready();
+      tg.expand();
+      console.log("Telegram WebApp OK");
+    } else {
+      console.log("NOT Telegram");
+    }
+  }, []);
 
   const addToCart = (product) => {
     setCart([...cart, product]);
@@ -40,34 +42,30 @@ function App() {
   };
 
   const sendOrder = () => {
-    if (!tg) {
-      alert("Открой через Telegram");
-      return;
-    }
-
     const order = {
       items: cart,
       total: getTotal()
     };
 
-    tg.sendData(JSON.stringify(order));
+    if (tg) {
+      tg.sendData(JSON.stringify(order));
+    } else {
+      alert("НЕ через Telegram");
+      console.log(order);
+    }
   };
 
   return (
       <div className="container">
-        <h1 className="title">🔥 Tobacco Hub</h1>
+        <h1>🔥 Tobacco Hub</h1>
 
         {screen === "home" && (
             <>
-              <h2 className="subtitle">Категории</h2>
+              <h2>Категории</h2>
 
               <div className="grid">
                 <div className="card" onClick={() => setScreen("tobacco")}>
                   💨 Табак
-                </div>
-
-                <div className="card">
-                  🧰 Допы
                 </div>
               </div>
             </>
@@ -75,11 +73,9 @@ function App() {
 
         {screen === "tobacco" && (
             <>
-              <button className="button" onClick={() => setScreen("home")}>
-                ⬅ Назад
-              </button>
+              <button onClick={() => setScreen("home")}>Назад</button>
 
-              <h2 className="subtitle">Выберите бренд</h2>
+              <h2>Бренды</h2>
 
               <div className="grid">
                 {Object.keys(tobaccoData).map((brand) => (
@@ -100,24 +96,17 @@ function App() {
 
         {screen === "products" && (
             <>
-              <button className="button" onClick={() => setScreen("tobacco")}>
-                ⬅ Назад
-              </button>
+              <button onClick={() => setScreen("tobacco")}>Назад</button>
 
-              <h2 className="subtitle">{selectedBrand}</h2>
+              <h2>{selectedBrand}</h2>
 
               <div className="grid">
-                {tobaccoData[selectedBrand].map((product) => (
-                    <div key={product.id} className="card">
-                      <div>{product.name}</div>
-                      <div>{product.price} ₽</div>
+                {tobaccoData[selectedBrand].map((p) => (
+                    <div key={p.id} className="card">
+                      <p>{p.name}</p>
+                      <p>{p.price} ₽</p>
 
-                      <button
-                          className="button"
-                          onClick={() =>
-                              addToCart({ ...product, brand: selectedBrand })
-                          }
-                      >
+                      <button onClick={() => addToCart({ ...p, brand: selectedBrand })}>
                         Добавить
                       </button>
                     </div>
@@ -127,24 +116,19 @@ function App() {
         )}
 
         <div className="cart">
-          <h2>🛒 Корзина ({cart.length})</h2>
+          <h3>Корзина ({cart.length})</h3>
 
-          {cart.map((item, index) => (
-              <div key={index} className="cart-item">
-            <span>
-              {item.brand} {item.name} — {item.price} ₽
-            </span>
-
-                <button onClick={() => removeFromCart(index)}>❌</button>
+          {cart.map((item, i) => (
+              <div key={i} className="cart-item">
+                {item.brand} {item.name}
+                <button onClick={() => removeFromCart(i)}>❌</button>
               </div>
           ))}
 
-          <div className="total">Итого: {getTotal()} ₽</div>
+          <p>Итого: {getTotal()} ₽</p>
 
           {cart.length > 0 && (
-              <button className="checkout" onClick={sendOrder}>
-                Оформить заказ
-              </button>
+              <button onClick={sendOrder}>Оформить заказ</button>
           )}
         </div>
       </div>
