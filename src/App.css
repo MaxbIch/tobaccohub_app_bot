@@ -48,6 +48,7 @@ body {
 /* 🔥 ИНФА */
 .info {
   padding: 10px;
+  line-height: 20px;
 }
 
 .info p {
@@ -63,27 +64,26 @@ body {
 /* 🔥 ЦЕНА */
 .price {
   color: #fff;
-  font-weight: 600;
-  margin-top: 5px;
+  font-weight: 400;
 }
 
-/* 🔥 НАЛИЧИЕ */
+/*  Вкус */
 .stock {
-  color: #ff3b30;
+  color: #ffffff;
   font-size: 12px;
 }
 
 /* 🔥 КНОПКА ДОБАВИТЬ */
 .add-btn {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   right: 10px;
-  background: #ff3b30;
+  background: #ffffff;
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  color: white;
+  width: 25px;
+  height: 25px;
+  color: #000000;
   font-size: 18px;
 }
 
@@ -184,4 +184,12 @@ body {
   background: #ff3b30;
   color: white;
   font-size: 16px;
+}
+
+@media screen and (max-width: 450px) {
+  .grid.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 2fr));
+    gap: 12px;
+  }
 }

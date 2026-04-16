@@ -155,7 +155,7 @@ function App() {
                       <div className="info">
                         <p>{p.name}</p>
                         <div className="stock">{p.taste}</div>
-                        <div className="price">{p.price} vnd</div>
+                        <div className="price">{p.price} VND</div>
                       </div>
 
                       <button
