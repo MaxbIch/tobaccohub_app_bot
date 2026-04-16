@@ -114,7 +114,7 @@ function App() {
 
                       <div className="info">
                         <p>{p.name}</p>
-                        <div className="stock">В наличии</div>
+                        <div className="stock">{p.taste}</div>
                         <div className="price">{p.price} ₽</div>
                       </div>
 
@@ -154,8 +154,8 @@ function App() {
 
                       <div className="info">
                         <p>{p.name}</p>
-                        <div className="stock">В наличии</div>
-                        <div className="price">{p.price} ₽</div>
+                        <div className="stock">{p.taste}</div>
+                        <div className="price">{p.price} vnd</div>
                       </div>
 
                       <button

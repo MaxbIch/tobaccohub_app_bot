@@ -5,6 +5,7 @@ const mustHave = [
     {
         id: 1,
         name: "Alova",
+        taste: "Алоэ и розовая гуава",
         price: 1700,
         previewImage: mh_alova,
         fullImage: mh_alova1,
