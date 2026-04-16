@@ -21,8 +21,7 @@ function App() {
   const [screen, setScreen] = useState("home");
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [cart, setCart] = useState([]);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+
   const tg = window.Telegram?.WebApp;
 
   useEffect(() => {
@@ -30,8 +29,7 @@ function App() {
       tg.ready();
       tg.expand();
       console.log("Telegram OK");
-    } else {
-      console.log("Telegram NOT FOUND");
+      console.log("USER:", tg.initDataUnsafe?.user);
     }
   }, []);
 
@@ -48,16 +46,20 @@ function App() {
   };
 
   const sendOrder = () => {
+    const user = tg?.initDataUnsafe?.user;
+
     const order = {
+      user: {
+        id: user?.id,
+        name: user?.first_name,
+        username: user?.username
+      },
       items: cart,
       total: getTotal()
     };
 
     if (tg) {
       tg.sendData(JSON.stringify(order));
-    } else {
-      alert("НЕ через Telegram");
-      console.log(order);
     }
   };
 
@@ -123,51 +125,6 @@ function App() {
             </>
         )}
 
-        {screen === "checkout" && (
-            <>
-              <button onClick={() => setScreen("home")}>⬅ Назад</button>
-
-              <h2>Оформление заказа</h2>
-
-              <input
-                  className="input"
-                  placeholder="Ваше имя"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-              />
-
-              <input
-                  className="input"
-                  placeholder="Телефон"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-              />
-
-              <button
-                  className="checkout"
-                  onClick={() => {
-                    if (!name || !phone) {
-                      alert("Заполни все поля");
-                      return;
-                    }
-
-                    const order = {
-                      name,
-                      phone,
-                      items: cart,
-                      total: getTotal()
-                    };
-
-                    if (tg) {
-                      tg.sendData(JSON.stringify(order));
-                    }
-                  }}
-              >
-                Подтвердить заказ
-              </button>
-            </>
-        )}
-
         {screen === "accessories" && (
             <>
               <button onClick={() => setScreen("home")}>Назад</button>
@@ -200,15 +157,11 @@ function App() {
           <p>Итого: {getTotal()} ₽</p>
 
           {cart.length > 0 && (
-              <button onClick={() => setScreen("checkout")}>
-                Оформить заказ
-              </button>
+              <button onClick={sendOrder}>Оформить заказ</button>
           )}
         </div>
       </div>
   );
 }
-
-
 
 export default App;
