@@ -12,6 +12,11 @@ const tobaccoData = {
   ]
 };
 
+const accessories = [
+  { id: 10, name: "Чаша Oblako", price: 1200 },
+  { id: 11, name: "Калауд", price: 900 }
+];
+
 function App() {
   const [screen, setScreen] = useState("home");
   const [selectedBrand, setSelectedBrand] = useState(null);
@@ -23,9 +28,9 @@ function App() {
     if (tg) {
       tg.ready();
       tg.expand();
-      console.log("Telegram WebApp OK");
+      console.log("Telegram OK");
     } else {
-      console.log("NOT Telegram");
+      console.log("Telegram NOT FOUND");
     }
   }, []);
 
@@ -67,6 +72,10 @@ function App() {
                 <div className="card" onClick={() => setScreen("tobacco")}>
                   💨 Табак
                 </div>
+
+                <div className="card" onClick={() => setScreen("accessories")}>
+                  🧰 Допы
+                </div>
               </div>
             </>
         )}
@@ -74,8 +83,6 @@ function App() {
         {screen === "tobacco" && (
             <>
               <button onClick={() => setScreen("home")}>Назад</button>
-
-              <h2>Бренды</h2>
 
               <div className="grid">
                 {Object.keys(tobaccoData).map((brand) => (
@@ -107,6 +114,25 @@ function App() {
                       <p>{p.price} ₽</p>
 
                       <button onClick={() => addToCart({ ...p, brand: selectedBrand })}>
+                        Добавить
+                      </button>
+                    </div>
+                ))}
+              </div>
+            </>
+        )}
+
+        {screen === "accessories" && (
+            <>
+              <button onClick={() => setScreen("home")}>Назад</button>
+
+              <div className="grid">
+                {accessories.map((item) => (
+                    <div key={item.id} className="card">
+                      <p>{item.name}</p>
+                      <p>{item.price} ₽</p>
+
+                      <button onClick={() => addToCart({ ...item, brand: "Допы" })}>
                         Добавить
                       </button>
                     </div>
