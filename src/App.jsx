@@ -1,25 +1,17 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import mustHave from "./data/musthave";
+import darkside from "./data/darkside";
 
 const tobaccoData = {
-  Darkside: [
-    { id: 1, name: "Supernova", price: 1800 },
-    { id: 2, name: "Bananapapa", price: 1750 }
-  ],
-  MustHave: [
-    { id: 3, name: "Pinkman", price: 1700 },
-    { id: 4, name: "Space Flavor", price: 1690 }
-  ]
+  Darkside: darkside,
+  MustHave: mustHave
 };
-
-const accessories = [
-  { id: 10, name: "Чаша Oblako", price: 1200 },
-  { id: 11, name: "Калауд", price: 900 }
-];
 
 function App() {
   const [screen, setScreen] = useState("home");
   const [selectedBrand, setSelectedBrand] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([]);
 
   const tg = window.Telegram?.WebApp;
@@ -28,8 +20,6 @@ function App() {
     if (tg) {
       tg.ready();
       tg.expand();
-      console.log("Telegram OK");
-      console.log("USER:", tg.initDataUnsafe?.user);
     }
   }, []);
 
@@ -48,48 +38,38 @@ function App() {
   const sendOrder = () => {
     const user = tg?.initDataUnsafe?.user;
 
-    console.log("USER:", user); // 👈 добавили для проверки
-
     const order = {
-      user: user
-          ? {
-            id: user.id,
-            name: user.first_name,
-            username: user.username
-          }
-          : null,
+      user: {
+        id: user?.id,
+        name: user?.first_name,
+        username: user?.username
+      },
       items: cart,
       total: getTotal()
     };
 
-    if (tg) {
-      tg.sendData(JSON.stringify(order));
-    }
+    tg.sendData(JSON.stringify(order));
   };
 
   return (
       <div className="container">
-        <h1>🔥 Tobacco Hub</h1>
+        <h1 className="title">🔥 Tobacco Hub</h1>
 
+        {/* HOME */}
         {screen === "home" && (
-            <>
-              <h2>Категорииbbbb</h2>
-
-              <div className="grid">
-                <div className="card" onClick={() => setScreen("tobacco")}>
-                  💨 Табак
-                </div>
-
-                <div className="card" onClick={() => setScreen("accessories")}>
-                  🧰 Допы
-                </div>
+            <div className="grid">
+              <div className="card big" onClick={() => setScreen("tobacco")}>
+                💨 Табак
               </div>
-            </>
+            </div>
         )}
 
+        {/* CATEGORIES */}
         {screen === "tobacco" && (
             <>
-              <button onClick={() => setScreen("home")}>Назад</button>
+              <button className="back" onClick={() => setScreen("home")}>
+                ⬅ Назад
+              </button>
 
               <div className="grid">
                 {Object.keys(tobaccoData).map((brand) => (
@@ -108,62 +88,69 @@ function App() {
             </>
         )}
 
+        {/* PRODUCTS */}
         {screen === "products" && (
             <>
-              <button onClick={() => setScreen("tobacco")}>Назад</button>
+              <button className="back" onClick={() => setScreen("tobacco")}>
+                ⬅ Назад
+              </button>
 
               <h2>{selectedBrand}</h2>
 
-              <div className="grid">
+              <div className="grid products">
                 {tobaccoData[selectedBrand].map((p) => (
-                    <div key={p.id} className="card">
-                      <p>{p.name}</p>
-                      <p>{p.price} ₽</p>
-
-                      <button onClick={() => addToCart({ ...p, brand: selectedBrand })}>
-                        Добавить
-                      </button>
+                    <div
+                        key={p.id}
+                        className="card product"
+                        onClick={() => {
+                          setSelectedProduct(p);
+                          setScreen("product");
+                        }}
+                    >
+                      <img src={p.image} />
+                      <div className="info">
+                        <p>{p.name}</p>
+                        <span>{p.price} ₽</span>
+                      </div>
                     </div>
                 ))}
               </div>
             </>
         )}
 
-        {screen === "accessories" && (
+        {/* PRODUCT PAGE */}
+        {screen === "product" && selectedProduct && (
             <>
-              <button onClick={() => setScreen("home")}>Назад</button>
+              <button className="back" onClick={() => setScreen("products")}>
+                ⬅ Назад
+              </button>
 
-              <div className="grid">
-                {accessories.map((item) => (
-                    <div key={item.id} className="card">
-                      <p>{item.name}</p>
-                      <p>{item.price} ₽</p>
+              <div className="product-page">
+                <img src={selectedProduct.image} className="big-img" />
 
-                      <button onClick={() => addToCart({ ...item, brand: "Допы" })}>
-                        Добавить
-                      </button>
-                    </div>
-                ))}
+                <h2>{selectedProduct.name}</h2>
+                <p className="price">{selectedProduct.price} ₽</p>
+                <p className="desc">{selectedProduct.description}</p>
+
+                <button
+                    className="add"
+                    onClick={() =>
+                        addToCart({ ...selectedProduct, brand: selectedBrand })
+                    }
+                >
+                  Добавить в корзину
+                </button>
               </div>
             </>
         )}
 
-        <div className="cart">
-          <h3>Корзина ({cart.length})</h3>
-
-          {cart.map((item, i) => (
-              <div key={i} className="cart-item">
-                {item.brand} {item.name}
-                <button onClick={() => removeFromCart(i)}>❌</button>
-              </div>
-          ))}
-
-          <p>Итого: {getTotal()} ₽</p>
-
-          {cart.length > 0 && (
-              <button onClick={sendOrder}>Оформить заказ</button>
-          )}
-        </div>
+        {/* CART */}
+        {cart.length > 0 && (
+            <div className="cart-bar">
+              <span>🛒 {cart.length} товаров — {getTotal()} ₽</span>
+              <button onClick={sendOrder}>Оформить</button>
+            </div>
+        )}
       </div>
   );
 }
