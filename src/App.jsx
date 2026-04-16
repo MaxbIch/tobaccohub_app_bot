@@ -3,6 +3,11 @@ import "./App.css";
 
 const tg = window.Telegram?.WebApp;
 
+if (tg) {
+  tg.ready();
+  tg.expand();
+}
+
 const tobaccoData = {
   Darkside: [
     { id: 1, name: "Supernova", price: 1800 },
