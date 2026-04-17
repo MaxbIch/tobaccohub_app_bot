@@ -40,126 +40,126 @@ const mustHave = [
         id: 1,
         name: "Alova",
         taste: "Алоэ и розовая гуава",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_alova,
         fullImage: mh_alova1,
         description: "Грейпфрут + малина"
     },{
         id: 2,
         name: "Baikal",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_baikal,
         fullImage: mh_baikal1,
         taste: "Лесные травы и хвоя"
     },{
         id: 3,
         name: "Black currant",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_blackCurrant,
         fullImage: mh_blackCurrant1,
         taste: "Черная смородина"
     },{
         id: 4,
         name: "Candy cow",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_candyCow,
         fullImage: mh_candyCow1,
         taste: "Карамель и сгущенное молоко"
     },{
         id: 5,
         name: "Cherry juice",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_cheryJuice,
         fullImage: mh_cheryJuice1,
         taste: "Вишнёвый сок"
     },{
         id: 6,
         name: "Cookie",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_cookie,
         fullImage: mh_cookie1,
         taste: "Печенье"
     },{
         id: 7,
         name: "Jumango",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_jumango,
         fullImage: mh_jumango1,
         taste: "Манго, малина, мёд"
     },{
         id: 8,
         name: "Mandarin",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_mandarin,
         fullImage: mh_mandarin1,
         taste: "Мандарин"
     },{
         id: 9,
         name: "Mango sling",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_manggoSling,
         fullImage: mh_manggoSling1,
         taste: "Напиток манго слинг"
     },{
         id: 10,
         name: "Maple pecan",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_mapplePecan,
         fullImage: mh_mapplePecan1,
         taste: "Выпечка и клюквенный сироп"
     },{
         id: 11,
         name: "Marula",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_marula,
         fullImage: mh_marula1,
         taste: "Фрукт марула"
     },{
         id: 12,
         name: "Milky rice",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_milkyRice,
         fullImage: mh_milkyRice1,
         taste: "Молочная каша"
     },{
         id: 13,
         name: "Orange Team",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_orangeTeam,
         fullImage: mh_orangeTeam1,
         taste: "Мандарин апельсин"
     },{
         id: 14,
         name: "Sweet peach",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_peach,
         fullImage: mh_peach1,
         taste: "Сладкий персик"
     },{
         id: 15,
         name: "Pineapple rings",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_pineaooleRings,
         fullImage: mh_pineaooleRings1,
         taste: "Ананасовые колечки"
     },{
         id: 16,
         name: "Sour tropic",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_sourTropic,
         fullImage: mh_sourTropic1,
         taste: "Тропические фрукты"
     },{
         id: 17,
         name: "Strawberry-Lychee",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_strawberryLychee,
         fullImage: mh_strawberryLychee1,
         taste: "Земляника и личи"
     },{
         id: 18,
         name: "Tipsy",
-        price: 600000,
+        price: '600.000',
         previewImage: mh_tipsy,
         fullImage: mh_tipsy1,
         taste: "Ягодный коктейль"

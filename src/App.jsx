@@ -3,11 +3,44 @@ import "./App.css";
 
 import darkside from "./data/tobacco/darkside";
 import mustHave from "./data/tobacco/musthave";
+import blackburn from "./data/tobacco/blackburn";
+import bonche from "./data/tobacco/bonche";
+import starline from "./data/tobacco/starline";
+import satyr from "./data/tobacco/satyr";
+import huligan from "./data/tobacco/huligan";
+import endorfin from "./data/tobacco/endorfin";
 import accessories from "./data/accessories/accessories";
+
+import darksideImg from "./img/tobaccologo/darkside.png";
+import mustHaveImg from "./img/tobaccologo/musthave.png";
+import blackburnImg from "./img/tobaccologo/blackburn.png";
+import boncheImg from "./img/tobaccologo/bonche.png";
+import starlineImg from "./img/tobaccologo/starline.png";
+import satyrImg from "./img/tobaccologo/satyr.png";
+import huliganImg from "./img/tobaccologo/huligan.png";
+import endorfinImg from "./img/tobaccologo/endorf.png";
+
 
 const tobaccoData = {
   Darkside: darkside,
-  MustHave: mustHave
+  MustHave: mustHave,
+  Blackburn: blackburn,
+  Endorfin: endorfin,
+  Bonche: bonche,
+  Starline: starline,
+  Satyr: satyr,
+  Huligan: huligan
+};
+
+const categoryImages = {
+  Darkside: darksideImg,
+  MustHave: mustHaveImg,
+  Bonche: boncheImg,
+  Starline: starlineImg,
+  Satyr: satyrImg,
+  Blackburn: blackburnImg,
+  Huligan: huliganImg,
+  Endorfin: endorfinImg,
 };
 
 function App() {
@@ -86,7 +119,7 @@ function App() {
                           setScreen("products");
                         }}
                     >
-                      {brand}
+                      <img src={categoryImages[brand]} alt={brand} />
                     </div>
                 ))}
               </div>
@@ -115,7 +148,7 @@ function App() {
                       <div className="info">
                         <p>{p.name}</p>
                         <div className="stock">{p.taste}</div>
-                        <div className="price">{p.price} ₽</div>
+                        <div className="price">{p.price} VND</div>
                       </div>
 
                       <button
@@ -141,7 +174,9 @@ function App() {
               </button>
 
               <div className="grid products">
-                {tobaccoData[selectedBrand].map((p) => (
+                {[...tobaccoData[selectedBrand]]
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((p) => (
                     <div
                         key={p.id}
                         className="card product"
@@ -189,7 +224,7 @@ function App() {
                 <img src={selectedProduct.fullImage} className="big-img" />
 
                 <h2>{selectedProduct.name}</h2>
-                <p className="price">{selectedProduct.price} ₽</p>
+                <p className="price">{selectedProduct.price} VND</p>
                 <p className="desc">{selectedProduct.description}</p>
 
                 <button
@@ -210,7 +245,7 @@ function App() {
         {/* CART BAR */}
         {cart.length > 0 && (
             <div className="cart-bar" onClick={() => setCartOpen(true)}>
-              🛒 {cart.length} товаров — {getTotal()} ₽
+              🛒 {cart.length} товаров — {getTotal()} VND
             </div>
         )}
 
@@ -224,14 +259,14 @@ function App() {
           {cart.map((item, i) => (
               <div key={i} className="cart-item">
             <span>
-              {item.name} — {item.price} ₽
+              {item.name} — {item.price} VND
             </span>
 
                 <button onClick={() => removeFromCart(i)}>❌</button>
               </div>
           ))}
 
-          <h3>Итого: {getTotal()} ₽</h3>
+          <h3>Итого: {getTotal()} VND</h3>
 
           <button className="checkout" onClick={sendOrder}>
             Оформить заказ
