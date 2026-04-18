@@ -14,8 +14,6 @@ import image13 from "../../img/starline/pina.png";
 import image14 from "../../img/starline/raspberry.png";
 import image15 from "../../img/starline/raspberrywaffles.png";
 import image16 from "../../img/starline/strawberry.png";
-import mh_alova from "../../img/musthave/mh_alova.jpeg";
-import mh_alova1 from "../../img/musthave/mh_alova1.jpeg";
 
 const starline = [
     {

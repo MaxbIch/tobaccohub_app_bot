@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+// 🔥 Табак
 import darkside from "./data/tobacco/darkside";
 import mustHave from "./data/tobacco/musthave";
 import blackburn from "./data/tobacco/blackburn";
@@ -9,8 +10,15 @@ import starline from "./data/tobacco/starline";
 import satyr from "./data/tobacco/satyr";
 import huligan from "./data/tobacco/huligan";
 import endorfin from "./data/tobacco/endorfin";
+
+// 👄 Жевательный табак
+import chew1 from "./data/chew/chew1";
+import chew2 from "./data/chew/chew2";
+
+// 🧰 Допы
 import accessories from "./data/accessories/accessories";
 
+// 🖼 Картинки табаков
 import darksideImg from "./img/tobaccologo/darkside.png";
 import mustHaveImg from "./img/tobaccologo/musthave.png";
 import blackburnImg from "./img/tobaccologo/blackburn.png";
@@ -20,7 +28,11 @@ import satyrImg from "./img/tobaccologo/satyr.png";
 import huliganImg from "./img/tobaccologo/huligan.png";
 import endorfinImg from "./img/tobaccologo/endorf.png";
 
+// 🖼 Жевательный
+import chew1Img from "./img/chewlogo/turbo.jpg";
+import chew2Img from "./img/chewlogo/turbo.jpg";
 
+// 📦 ДАННЫЕ
 const tobaccoData = {
   Darkside: darkside,
   MustHave: mustHave,
@@ -32,7 +44,7 @@ const tobaccoData = {
   Huligan: huligan
 };
 
-const categoryImages = {
+const tobaccoImages = {
   Darkside: darksideImg,
   MustHave: mustHaveImg,
   Bonche: boncheImg,
@@ -41,6 +53,16 @@ const categoryImages = {
   Blackburn: blackburnImg,
   Huligan: huliganImg,
   Endorfin: endorfinImg,
+};
+
+const chewData = {
+  Chew1: chew1,
+  Chew2: chew2,
+};
+
+const chewImages = {
+  Chew1: chew1Img,
+  Chew2: chew2Img,
 };
 
 function App() {
@@ -57,6 +79,17 @@ function App() {
     tg?.expand();
   }, []);
 
+  // 🔥 ПАРС ЦЕНЫ (из "600.000" → 600000)
+  const parsePrice = (price) => {
+    if (typeof price === "number") return price;
+    return Number(price.replace(/\./g, ""));
+  };
+
+  // 💰 ФОРМАТ ОБРАТНО (600000 → "600.000")
+  const formatPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
@@ -66,7 +99,9 @@ function App() {
   };
 
   const getTotal = () => {
-    return cart.reduce((sum, item) => sum + item.price, 0);
+    return cart.reduce((sum, item) => {
+      return sum + parsePrice(item.price);
+    }, 0);
   };
 
   const sendOrder = () => {
@@ -85,6 +120,16 @@ function App() {
     tg.sendData(JSON.stringify(order));
   };
 
+  const handleBackFromProduct = () => {
+    if (chewData[selectedBrand]) {
+      setScreen("chew_products");
+    } else if (tobaccoData[selectedBrand]) {
+      setScreen("products");
+    } else {
+      setScreen("accessories");
+    }
+  };
+
   return (
       <div className="container">
         <h1 className="title">🔥 Tobacco Hub</h1>
@@ -94,6 +139,10 @@ function App() {
             <div className="grid">
               <div className="card" onClick={() => setScreen("tobacco")}>
                 💨 Табак
+              </div>
+
+              <div className="card" onClick={() => setScreen("chew")}>
+                👄 Жевательный табак
               </div>
 
               <div className="card" onClick={() => setScreen("accessories")}>
@@ -109,7 +158,7 @@ function App() {
                 ⬅ Назад
               </button>
 
-              <div className="grid">
+              <div className="grid brands-grid">
                 {Object.keys(tobaccoData).map((brand) => (
                     <div
                         key={brand}
@@ -119,9 +168,121 @@ function App() {
                           setScreen("products");
                         }}
                     >
-                      <img src={categoryImages[brand]} alt={brand} />
+                      <img src={tobaccoImages[brand]} alt={brand} />
                     </div>
                 ))}
+              </div>
+            </>
+        )}
+
+        {/* CHEW */}
+        {screen === "chew" && (
+            <>
+              <button className="back" onClick={() => setScreen("home")}>
+                ⬅ Назад
+              </button>
+
+              <div className="grid brands-grid">
+                {Object.keys(chewData).map((brand) => (
+                    <div
+                        key={brand}
+                        className="card"
+                        onClick={() => {
+                          setSelectedBrand(brand);
+                          setScreen("chew_products");
+                        }}
+                    >
+                      <img src={chewImages[brand]} alt={brand} />
+                    </div>
+                ))}
+              </div>
+            </>
+        )}
+
+        {/* PRODUCTS (ТАБАК) */}
+        {screen === "products" && (
+            <>
+              <button className="back" onClick={() => setScreen("tobacco")}>
+                ⬅ Назад
+              </button>
+
+              <div className="grid products">
+                {[...tobaccoData[selectedBrand]]
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((p) => (
+                        <div
+                            key={p.id}
+                            className="card product"
+                            onClick={() => {
+                              setSelectedProduct(p);
+                              setScreen("product");
+                            }}
+                        >
+                          <img src={p.previewImage} />
+
+                          <div className="info">
+                            <p>{p.name}</p>
+                            <div className="stock">{p.taste}</div>
+                            <div className="price">
+                              {formatPrice(parsePrice(p.price))} VND
+                            </div>
+                          </div>
+
+                          <button
+                              className="add-btn"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                addToCart({ ...p, brand: selectedBrand });
+                              }}
+                          >
+                            +
+                          </button>
+                        </div>
+                    ))}
+              </div>
+            </>
+        )}
+
+        {/* PRODUCTS (ЖЕВАТЕЛЬНЫЙ) */}
+        {screen === "chew_products" && (
+            <>
+              <button className="back" onClick={() => setScreen("chew")}>
+                ⬅ Назад
+              </button>
+
+              <div className="grid products">
+                {[...chewData[selectedBrand]]
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((p) => (
+                        <div
+                            key={p.id}
+                            className="card product"
+                            onClick={() => {
+                              setSelectedProduct(p);
+                              setScreen("product");
+                            }}
+                        >
+                          <img src={p.previewImage} />
+
+                          <div className="info">
+                            <p>{p.name}</p>
+                            <div className="stock">{p.taste}</div>
+                            <div className="price">
+                              {formatPrice(parsePrice(p.price))} VND
+                            </div>
+                          </div>
+
+                          <button
+                              className="add-btn"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                addToCart({ ...p, brand: selectedBrand });
+                              }}
+                          >
+                            +
+                          </button>
+                        </div>
+                    ))}
               </div>
             </>
         )}
@@ -148,7 +309,9 @@ function App() {
                       <div className="info">
                         <p>{p.name}</p>
                         <div className="stock">{p.taste}</div>
-                        <div className="price">{p.price} VND</div>
+                        <div className="price">
+                          {formatPrice(parsePrice(p.price))} VND
+                        </div>
                       </div>
 
                       <button
@@ -166,65 +329,20 @@ function App() {
             </>
         )}
 
-        {/* PRODUCTS */}
-        {screen === "products" && (
-            <>
-              <button className="back" onClick={() => setScreen("tobacco")}>
-                ⬅ Назад
-              </button>
-
-              <div className="grid products">
-                {[...tobaccoData[selectedBrand]]
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((p) => (
-                    <div
-                        key={p.id}
-                        className="card product"
-                        onClick={() => {
-                          setSelectedProduct(p);
-                          setScreen("product");
-                        }}
-                    >
-                      <img src={p.previewImage} />
-
-                      <div className="info">
-                        <p>{p.name}</p>
-                        <div className="stock">{p.taste}</div>
-                        <div className="price">{p.price} VND</div>
-                      </div>
-
-                      <button
-                          className="add-btn"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            addToCart({ ...p, brand: selectedBrand });
-                          }}
-                      >
-                        +
-                      </button>
-                    </div>
-                ))}
-              </div>
-            </>
-        )}
-
         {/* PRODUCT PAGE */}
         {screen === "product" && selectedProduct && (
             <>
-              <button
-                  className="back"
-                  onClick={() =>
-                      setScreen(selectedBrand ? "products" : "accessories")
-                  }
-              >
+              <button className="back" onClick={handleBackFromProduct}>
                 ⬅ Назад
               </button>
 
               <div className="product-page">
-                <img src={selectedProduct.fullImage} className="big-img" />
+                <img src={selectedProduct.previewImage} className="big-img" />
 
                 <h2>{selectedProduct.name}</h2>
-                <p className="price">{selectedProduct.price} VND</p>
+                <p className="price">
+                  {formatPrice(parsePrice(selectedProduct.price))} VND
+                </p>
                 <p className="desc">{selectedProduct.description}</p>
 
                 <button
@@ -242,14 +360,13 @@ function App() {
             </>
         )}
 
-        {/* CART BAR */}
+        {/* CART */}
         {cart.length > 0 && (
             <div className="cart-bar" onClick={() => setCartOpen(true)}>
-              🛒 {cart.length} товаров — {getTotal()} VND
+              🛒 {cart.length} товаров — {formatPrice(getTotal())} VND
             </div>
         )}
 
-        {/* CART MODAL */}
         <div className={`cart-modal ${cartOpen ? "open" : ""}`}>
           <div className="cart-header">
             <h2>Корзина</h2>
@@ -259,14 +376,13 @@ function App() {
           {cart.map((item, i) => (
               <div key={i} className="cart-item">
             <span>
-              {item.name} — {item.price} VND
+              {item.name} — {formatPrice(parsePrice(item.price))} VND
             </span>
-
                 <button onClick={() => removeFromCart(i)}>❌</button>
               </div>
           ))}
 
-          <h3>Итого: {getTotal()} VND</h3>
+          <h3>Итого: {formatPrice(getTotal())} VND</h3>
 
           <button className="checkout" onClick={sendOrder}>
             Оформить заказ
