@@ -32,7 +32,6 @@ import endorfinImg from "./img/tobaccologo/endorf.png";
 import chew1Img from "./img/chewlogo/turbo.jpg";
 import chew2Img from "./img/chewlogo/turbo.jpg";
 
-// 📦 ДАННЫЕ
 const tobaccoData = {
   Darkside: darkside,
   MustHave: mustHave,
@@ -71,6 +70,7 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const tg = window.Telegram?.WebApp;
 
@@ -79,13 +79,11 @@ function App() {
     tg?.expand();
   }, []);
 
-  // 🔥 ПАРС ЦЕНЫ (из "600.000" → 600000)
   const parsePrice = (price) => {
     if (typeof price === "number") return price;
     return Number(price.replace(/\./g, ""));
   };
 
-  // 💰 ФОРМАТ ОБРАТНО (600000 → "600.000")
   const formatPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
@@ -131,264 +129,306 @@ function App() {
   };
 
   return (
-      <div className="container">
-        <h1 className="title">🔥 Tobacco Hub</h1>
+      <>
+        {/* 🔝 NAVBAR */}
+        <div className="navbar">
+          <div className="nav-inner">
+            <div className="logo">🔥 Tobacco Hub</div>
 
-        {/* HOME */}
-        {screen === "home" && (
-            <div className="grid">
-              <div className="card" onClick={() => setScreen("tobacco")}>
-                💨 Табак
-              </div>
-
-              <div className="card" onClick={() => setScreen("chew")}>
-                👄 Жевательный табак
-              </div>
-
-              <div className="card" onClick={() => setScreen("accessories")}>
-                🧰 Допы
-              </div>
-            </div>
-        )}
-
-        {/* TOBACCO */}
-        {screen === "tobacco" && (
-            <>
-              <button className="back" onClick={() => setScreen("home")}>
-                ⬅ Назад
-              </button>
-
-              <div className="grid brands-grid">
-                {Object.keys(tobaccoData).map((brand) => (
-                    <div
-                        key={brand}
-                        className="card"
-                        onClick={() => {
-                          setSelectedBrand(brand);
-                          setScreen("products");
-                        }}
-                    >
-                      <img src={tobaccoImages[brand]} alt={brand} />
-                    </div>
-                ))}
-              </div>
-            </>
-        )}
-
-        {/* CHEW */}
-        {screen === "chew" && (
-            <>
-              <button className="back" onClick={() => setScreen("home")}>
-                ⬅ Назад
-              </button>
-
-              <div className="grid brands-grid">
-                {Object.keys(chewData).map((brand) => (
-                    <div
-                        key={brand}
-                        className="card"
-                        onClick={() => {
-                          setSelectedBrand(brand);
-                          setScreen("chew_products");
-                        }}
-                    >
-                      <img src={chewImages[brand]} alt={brand} />
-                    </div>
-                ))}
-              </div>
-            </>
-        )}
-
-        {/* PRODUCTS (ТАБАК) */}
-        {screen === "products" && (
-            <>
-              <button className="back" onClick={() => setScreen("tobacco")}>
-                ⬅ Назад
-              </button>
-
-              <div className="grid products">
-                {[...tobaccoData[selectedBrand]]
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((p) => (
-                        <div
-                            key={p.id}
-                            className="card product"
-                            onClick={() => {
-                              setSelectedProduct(p);
-                              setScreen("product");
-                            }}
-                        >
-                          <img src={p.previewImage} />
-
-                          <div className="info">
-                            <p>{p.name}</p>
-                            <div className="stock">{p.taste}</div>
-                            <div className="price">
-                              {formatPrice(parsePrice(p.price))} VND
-                            </div>
-                          </div>
-
-                          <button
-                              className="add-btn"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                addToCart({ ...p, brand: selectedBrand });
-                              }}
-                          >
-                            +
-                          </button>
-                        </div>
-                    ))}
-              </div>
-            </>
-        )}
-
-        {/* PRODUCTS (ЖЕВАТЕЛЬНЫЙ) */}
-        {screen === "chew_products" && (
-            <>
-              <button className="back" onClick={() => setScreen("chew")}>
-                ⬅ Назад
-              </button>
-
-              <div className="grid products">
-                {[...chewData[selectedBrand]]
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((p) => (
-                        <div
-                            key={p.id}
-                            className="card product"
-                            onClick={() => {
-                              setSelectedProduct(p);
-                              setScreen("product");
-                            }}
-                        >
-                          <img src={p.previewImage} />
-
-                          <div className="info">
-                            <p>{p.name}</p>
-                            <div className="stock">{p.taste}</div>
-                            <div className="price">
-                              {formatPrice(parsePrice(p.price))} VND
-                            </div>
-                          </div>
-
-                          <button
-                              className="add-btn"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                addToCart({ ...p, brand: selectedBrand });
-                              }}
-                          >
-                            +
-                          </button>
-                        </div>
-                    ))}
-              </div>
-            </>
-        )}
-
-        {/* ACCESSORIES */}
-        {screen === "accessories" && (
-            <>
-              <button className="back" onClick={() => setScreen("home")}>
-                ⬅ Назад
-              </button>
-
-              <div className="grid products">
-                {accessories.map((p) => (
-                    <div
-                        key={p.id}
-                        className="card product"
-                        onClick={() => {
-                          setSelectedProduct(p);
-                          setScreen("product");
-                        }}
-                    >
-                      <img src={p.previewImage} />
-
-                      <div className="info">
-                        <p>{p.name}</p>
-                        <div className="stock">{p.taste}</div>
-                        <div className="price">
-                          {formatPrice(parsePrice(p.price))} VND
-                        </div>
-                      </div>
-
-                      <button
-                          className="add-btn"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            addToCart(p);
-                          }}
-                      >
-                        +
-                      </button>
-                    </div>
-                ))}
-              </div>
-            </>
-        )}
-
-        {/* PRODUCT PAGE */}
-        {screen === "product" && selectedProduct && (
-            <>
-              <button className="back" onClick={handleBackFromProduct}>
-                ⬅ Назад
-              </button>
-
-              <div className="product-page">
-                <img src={selectedProduct.previewImage} className="big-img" />
-
-                <h2>{selectedProduct.name}</h2>
-                <p className="price">
-                  {formatPrice(parsePrice(selectedProduct.price))} VND
-                </p>
-                <p className="desc">{selectedProduct.description}</p>
-
-                <button
-                    className="add-main"
-                    onClick={() =>
-                        addToCart({
-                          ...selectedProduct,
-                          brand: selectedBrand || "Допы"
-                        })
-                    }
-                >
-                  Добавить в корзину
-                </button>
-              </div>
-            </>
-        )}
-
-        {/* CART */}
-        {cart.length > 0 && (
-            <div className="cart-bar" onClick={() => setCartOpen(true)}>
-              🛒 {cart.length} товаров — {formatPrice(getTotal())} VND
-            </div>
-        )}
-
-        <div className={`cart-modal ${cartOpen ? "open" : ""}`}>
-          <div className="cart-header">
-            <h2>Корзина</h2>
-            <button onClick={() => setCartOpen(false)}>✖</button>
+            <button
+                className="menu-btn"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+              ☰
+            </button>
           </div>
 
-          {cart.map((item, i) => (
-              <div key={i} className="cart-item">
-            <span>
-              {item.name} — {formatPrice(parsePrice(item.price))} VND
-            </span>
-                <button onClick={() => removeFromCart(i)}>❌</button>
+          {menuOpen && (
+              <div className="dropdown">
+                <div onClick={() => { setScreen("tobacco"); setMenuOpen(false); }}>
+                  💨 Табак
+                </div>
+                <div onClick={() => { setScreen("chew"); setMenuOpen(false); }}>
+                  👄 Жевательный
+                </div>
+                <div onClick={() => { setScreen("accessories"); setMenuOpen(false); }}>
+                  🧰 Допы
+                </div>
               </div>
-          ))}
-
-          <h3>Итого: {formatPrice(getTotal())} VND</h3>
-
-          <button className="checkout" onClick={sendOrder}>
-            Оформить заказ
-          </button>
+          )}
         </div>
-      </div>
+
+        <div className="container with-nav">
+
+          {/* HOME */}
+          {screen === "home" && (
+              <div className="grid">
+                <div className="card" onClick={() => setScreen("tobacco")}>
+                  💨 Табак
+                </div>
+
+                <div className="card" onClick={() => setScreen("chew")}>
+                  👄 Жевательный табак
+                </div>
+
+                <div className="card" onClick={() => setScreen("accessories")}>
+                  🧰 Допы
+                </div>
+              </div>
+          )}
+
+          {/* TOBACCO */}
+          {screen === "tobacco" && (
+              <>
+                <div className="back-wrapper">
+                  <button className="back" onClick={() => setScreen("home")}>
+                    ⬅ Назад
+                  </button>
+                </div>
+
+                <div className="grid brands-grid">
+                  {Object.keys(tobaccoData).map((brand) => (
+                      <div
+                          key={brand}
+                          className="card"
+                          onClick={() => {
+                            setSelectedBrand(brand);
+                            setScreen("products");
+                          }}
+                      >
+                        <img src={tobaccoImages[brand]} alt={brand} />
+                      </div>
+                  ))}
+                </div>
+              </>
+          )}
+
+          {/* CHEW */}
+          {screen === "chew" && (
+              <>
+                <div className="back-wrapper">
+                  <button className="back" onClick={() => setScreen("home")}>
+                    ⬅ Назад
+                  </button>
+                </div>
+
+                <div className="grid brands-grid">
+                  {Object.keys(chewData).map((brand) => (
+                      <div
+                          key={brand}
+                          className="card"
+                          onClick={() => {
+                            setSelectedBrand(brand);
+                            setScreen("chew_products");
+                          }}
+                      >
+                        <img src={chewImages[brand]} alt={brand} />
+                      </div>
+                  ))}
+                </div>
+              </>
+          )}
+
+          {/* PRODUCTS */}
+          {screen === "products" && (
+              <>
+                <div className="back-wrapper">
+                  <button className="back" onClick={() => setScreen("tobacco")}>
+                    ⬅ Назад
+                  </button>
+                </div>
+
+                <div className="grid products">
+                  {[...tobaccoData[selectedBrand]]
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map((p) => (
+                          <div
+                              key={p.id}
+                              className="card product"
+                              onClick={() => {
+                                setSelectedProduct(p);
+                                setScreen("product");
+                              }}
+                          >
+                            <img src={p.previewImage} />
+
+                            <div className="info">
+                              <p>{p.name}</p>
+                              <div className="stock">{p.taste}</div>
+                              <div className="price">
+                                {formatPrice(parsePrice(p.price))} VND
+                              </div>
+                            </div>
+
+                            <button
+                                className="add-btn"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  addToCart({ ...p, brand: selectedBrand });
+                                }}
+                            >
+                              +
+                            </button>
+                          </div>
+                      ))}
+                </div>
+              </>
+          )}
+
+          {/* CHEW PRODUCTS */}
+          {screen === "chew_products" && (
+              <>
+                <div className="back-wrapper">
+                  <button className="back" onClick={() => setScreen("chew")}>
+                    ⬅ Назад
+                  </button>
+                </div>
+
+                <div className="grid products">
+                  {[...chewData[selectedBrand]]
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map((p) => (
+                          <div
+                              key={p.id}
+                              className="card product"
+                              onClick={() => {
+                                setSelectedProduct(p);
+                                setScreen("product");
+                              }}
+                          >
+                            <img src={p.previewImage} />
+
+                            <div className="info">
+                              <p>{p.name}</p>
+                              <div className="stock">{p.taste}</div>
+                              <div className="price">
+                                {formatPrice(parsePrice(p.price))} VND
+                              </div>
+                            </div>
+
+                            <button
+                                className="add-btn"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  addToCart({ ...p, brand: selectedBrand });
+                                }}
+                            >
+                              +
+                            </button>
+                          </div>
+                      ))}
+                </div>
+              </>
+          )}
+
+          {/* ACCESSORIES */}
+          {screen === "accessories" && (
+              <>
+                <div className="back-wrapper">
+                  <button className="back" onClick={() => setScreen("home")}>
+                    ⬅ Назад
+                  </button>
+                </div>
+
+                <div className="grid products">
+                  {accessories.map((p) => (
+                      <div
+                          key={p.id}
+                          className="card product"
+                          onClick={() => {
+                            setSelectedProduct(p);
+                            setScreen("product");
+                          }}
+                      >
+                        <img src={p.previewImage} />
+
+                        <div className="info">
+                          <p>{p.name}</p>
+                          <div className="stock">{p.taste}</div>
+                          <div className="price">
+                            {formatPrice(parsePrice(p.price))} VND
+                          </div>
+                        </div>
+
+                        <button
+                            className="add-btn"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              addToCart(p);
+                            }}
+                        >
+                          +
+                        </button>
+                      </div>
+                  ))}
+                </div>
+              </>
+          )}
+
+          {/* PRODUCT PAGE */}
+          {screen === "product" && selectedProduct && (
+              <>
+                <div className="back-wrapper">
+                  <button className="back" onClick={handleBackFromProduct}>
+                    ⬅ Назад
+                  </button>
+                </div>
+
+                <div className="product-page">
+                  <img src={selectedProduct.previewImage} className="big-img" />
+
+                  <h2>{selectedProduct.name}</h2>
+                  <p className="price">
+                    {formatPrice(parsePrice(selectedProduct.price))} VND
+                  </p>
+                  <p className="desc">{selectedProduct.description}</p>
+
+                  <button
+                      className="add-main"
+                      onClick={() =>
+                          addToCart({
+                            ...selectedProduct,
+                            brand: selectedBrand || "Допы"
+                          })
+                      }
+                  >
+                    Добавить в корзину
+                  </button>
+                </div>
+              </>
+          )}
+
+          {/* CART */}
+          {cart.length > 0 && (
+              <div className="cart-bar" onClick={() => setCartOpen(true)}>
+                🛒 {cart.length} товаров — {formatPrice(getTotal())} VND
+              </div>
+          )}
+
+          <div className={`cart-modal ${cartOpen ? "open" : ""}`}>
+            <div className="cart-header">
+              <h2>Корзина</h2>
+              <button onClick={() => setCartOpen(false)}>✖</button>
+            </div>
+
+            {cart.map((item, i) => (
+                <div key={i} className="cart-item">
+              <span>
+                {item.name} — {formatPrice(parsePrice(item.price))} VND
+              </span>
+                  <button onClick={() => removeFromCart(i)}>❌</button>
+                </div>
+            ))}
+
+            <h3>Итого: {formatPrice(getTotal())} VND</h3>
+
+            <button className="checkout" onClick={sendOrder}>
+              Оформить заказ
+            </button>
+          </div>
+
+        </div>
+      </>
   );
 }
 

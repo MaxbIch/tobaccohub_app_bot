@@ -278,3 +278,65 @@ body {
     max-width: 110px;
   }
 }
+
+/* 🔝 NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: #0b0b0b;
+  border-bottom: 1px solid #1a1a1a;
+
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+/* МЕНЮ */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  border-top: 1px solid #1a1a1a;
+}
+
+.dropdown div {
+  padding: 12px;
+  border-bottom: 1px solid #1a1a1a;
+  cursor: pointer;
+}
+
+/* ОТСТУП ПОД NAVBAR */
+.with-nav {
+  padding-top: 60px;
+}
+
+/* КНОПКА НАЗАД */
+.back-wrapper {
+  position: sticky;
+  top: 60px;
+  z-index: 900;
+
+  background: #0b0b0b;
+  padding: 8px 0;
+}
