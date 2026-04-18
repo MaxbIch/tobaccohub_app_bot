@@ -162,19 +162,52 @@ function App() {
 
           {/* HOME */}
           {screen === "home" && (
-              <div className="grid">
-                <div className="card" onClick={() => setScreen("tobacco")}>
-                  💨 Табак
+              <>
+                {/* 🔥 HERO */}
+                <div className="hero">
+                  <h1>🔥 Tobacco Hub</h1>
+                  <p>Лучшие табаки и аксессуары во Вьетнаме</p>
                 </div>
 
-                <div className="card" onClick={() => setScreen("chew")}>
-                  👄 Жевательный табак
+                {/* 🔥 КАТЕГОРИИ */}
+                <div className="categories-grid">
+                  <div className="category-card tobacco" onClick={() => setScreen("tobacco")}>
+                    <div className="cat-icon">💨</div>
+                    <h3>Табак</h3>
+                    <p>Darkside, MustHave и др.</p>
+                  </div>
+
+                  <div className="category-card chew" onClick={() => setScreen("chew")}>
+                    <div className="cat-icon">👄</div>
+                    <h3>Жевательный</h3>
+                    <p>Сильный никотин</p>
+                  </div>
+
+                  <div className="category-card acc" onClick={() => setScreen("accessories")}>
+                    <div className="cat-icon">🧰</div>
+                    <h3>Аксессуары</h3>
+                    <p>Чаши, угли, девайсы</p>
+                  </div>
                 </div>
 
-                <div className="card" onClick={() => setScreen("accessories")}>
-                  🧰 Допы
+                {/* 🔥 О МАГАЗИНЕ */}
+                <div className="about">
+                  <h2>О магазине</h2>
+
+                  <div className="about-card">
+                    <p>
+                      Мы — Telegram-магазин с быстрой доставкой по Вьетнаму.
+                      Только оригинальный табак и проверенные бренды.
+                    </p>
+
+                    <div className="about-features">
+                      <div>⚡ Быстрая доставка</div>
+                      <div>🔥 Топ бренды</div>
+                      <div>💬 Поддержка 24/7</div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </>
           )}
 
           {/* TOBACCO */}

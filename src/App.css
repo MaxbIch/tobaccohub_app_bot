@@ -340,3 +340,112 @@ body {
   background: #0b0b0b;
   padding: 8px 0;
 }
+
+/* ================= HERO ================= */
+.hero {
+  padding: 30px 10px 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* ================= КАТЕГОРИИ ================= */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.category-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: #151515;
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* разные цвета */
+.category-card.tobacco {
+  background: linear-gradient(135deg, #1a1a1a, #2b1f1f);
+}
+
+.category-card.chew {
+  background: linear-gradient(135deg, #1a1a1a, #1f2b2b);
+}
+
+.category-card.acc {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #1a1a1a, #2b2b1f);
+}
+
+.cat-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.category-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.category-card p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  margin-top: 25px;
+}
+
+.about h2 {
+  margin-bottom: 10px;
+}
+
+.about-card {
+  background: #151515;
+  padding: 15px;
+  border-radius: 16px;
+  line-height: 20px;
+}
+
+.about-card p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.about-features {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ================= АДАПТИВ ================= */
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .category-card {
+    padding: 15px;
+  }
+}
