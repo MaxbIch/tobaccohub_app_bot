@@ -22,7 +22,7 @@ const mustHave = [
         id: 1,
         name: "Alova",
         taste: "Алоэ и розовая гуава",
-        price: '600.000',
+        
         previewImage: mh_alova,
         description: "Алоэ и розовая гуава — свежий травяной вкус с нежной фруктовой сладостью.",
 
@@ -34,7 +34,7 @@ const mustHave = [
     },{
         id: 2,
         name: "Baikal",
-        price: '600.000',
+        
         previewImage: mh_baikal,
         taste: "Лесные травы и хвоя",
         description: "Лесные травы и хвоя — насыщенный хвойный аромат с прохладной травяной ноткой.",
@@ -47,7 +47,7 @@ const mustHave = [
     },{
         id: 3,
         name: "Black currant",
-        price: '600.000',
+        
         previewImage: mh_blackCurrant,
         taste: "Черная смородина",
         description: "Черная смородина — глубокий ягодный вкус с яркой кислинкой.\n",
@@ -60,7 +60,7 @@ const mustHave = [
     },{
         id: 4,
         name: "Candy cow",
-        price: '600.000',
+        
         previewImage: mh_candyCow,
         taste: "Карамель и сгущенное молоко",
         description: "Карамель и сгущенное молоко — сладкий сливочный вкус с карамельной мягкостью.",
@@ -73,7 +73,7 @@ const mustHave = [
     },{
         id: 5,
         name: "Cherry juice",
-        price: '600.000',
+        
         previewImage: mh_cheryJuice,
         taste: "Вишнёвый сок",
         description: "Вишнёвый сок — сочный ягодный вкус с лёгкой кислинкой.\n",
@@ -86,7 +86,7 @@ const mustHave = [
     },{
         id: 6,
         name: "Cookie",
-        price: '600.000',
+        
         previewImage: mh_cookie,
         taste: "Печенье",
         description: "Печенье — тёплый сладкий вкус свежей выпечки.",
@@ -99,7 +99,7 @@ const mustHave = [
     },{
         id: 7,
         name: "Jumango",
-        price: '600.000',
+        
         previewImage: mh_jumango,
         taste: "Манго, малина, мёд",
         description: "Манго, малина, мёд — сладкий фруктовый микс с медовой мягкостью.\n",
@@ -112,7 +112,7 @@ const mustHave = [
     },{
         id: 8,
         name: "Mandarin",
-        price: '600.000',
+        
         previewImage: mh_mandarin,
         taste: "Мандарин",
         description: "Мандарин — сочный цитрусовый вкус с лёгкой сладостью.\n",
@@ -125,7 +125,7 @@ const mustHave = [
     },{
         id: 9,
         name: "Mango sling",
-        price: '600.000',
+        
         previewImage: mh_manggoSling,
         taste: "Напиток манго слинг",
         description: "Напиток манго слинг — тропический коктейль с яркой фруктовой сладостью.",
@@ -138,7 +138,7 @@ const mustHave = [
     },{
         id: 10,
         name: "Maple pecan",
-        price: '600.000',
+        
         previewImage: mh_mapplePecan,
         taste: "Выпечка и клюквенный сироп",
         description: "Выпечка и клюквенный сироп — сладкий десертный вкус с кислинкой ягод.",
@@ -151,7 +151,7 @@ const mustHave = [
     },{
         id: 11,
         name: "Marula",
-        price: '600.000',
+        
         previewImage: mh_marula,
         taste: "Фрукт марула",
         description: "Фрукт марула — экзотический мягкий вкус с кремовой сладостью.",
@@ -164,7 +164,7 @@ const mustHave = [
     },{
         id: 12,
         name: "Milky rice",
-        price: '600.000',
+        
         previewImage: mh_milkyRice,
         taste: "Молочная каша",
         description: "Молочная каша — нежный сливочный вкус с лёгкой сладостью.",
@@ -177,7 +177,7 @@ const mustHave = [
     },{
         id: 13,
         name: "Orange Team",
-        price: '600.000',
+        
         previewImage: mh_orangeTeam,
         taste: "Мандарин + апельсин",
         description: "Мандарин апельсин — яркий цитрусовый микс с освежающей сладостью.",
@@ -190,7 +190,7 @@ const mustHave = [
     },{
         id: 14,
         name: "Sweet peach",
-        price: '600.000',
+        
         previewImage: mh_peach,
         taste: "Сладкий персик",
         description: "Сладкий персик — мягкий фруктовый вкус с насыщенной сладостью.",
@@ -203,7 +203,7 @@ const mustHave = [
     },{
         id: 15,
         name: "Pineapple rings",
-        price: '600.000',
+        
         previewImage: mh_pineaooleRings,
         taste: "Ананасовые колечки",
         description: "Ананасовые колечки — сочный тропический вкус с карамельной ноткой.",
@@ -216,7 +216,7 @@ const mustHave = [
     },{
         id: 16,
         name: "Sour tropic",
-        price: '600.000',
+        
         previewImage: mh_sourTropic,
         taste: "Тропические фрукты",
         description: "Тропические фрукты — яркий сладко-кислый микс экзотических фруктов.",
@@ -229,7 +229,7 @@ const mustHave = [
     },{
         id: 17,
         name: "Strawberry-Lychee",
-        price: '600.000',
+        
         previewImage: mh_strawberryLychee,
         taste: "Земляника и личи",
         description: "Земляника и личи — нежный ягодный вкус с цветочной сладостью.",
@@ -242,7 +242,7 @@ const mustHave = [
     },{
         id: 18,
         name: "Tipsy",
-        price: '600.000',
+        
         previewImage: mh_tipsy,
         taste: "Ягодный коктейль",
         description: "Ягодный коктейль — насыщенный микс ягод с лёгкой кислинкой.",

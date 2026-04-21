@@ -20,225 +20,225 @@ const starline = [
         id: 1,
         name: "Ананас",
         taste: "Ананас",
-        price: '500.000',
+
         previewImage: image1,
         fullImage: image1,
-        description: "",
+        description: "Сочный тропический вкус с яркой кисло-сладкой свежестью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 2,
         name: "Бельгийские вафли",
         taste: "Бельгийские вафли",
-        price: '500.000',
+
         previewImage: image2,
         fullImage: image2,
-        description: "",
+        description: "Тёплый десертный вкус с мягкой сливочной сладостью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 3,
         name: "Ягодный попкорн",
         taste: "Ягодный попкорн",
-        price: '500.000',
+
         previewImage: image3,
         fullImage: image3,
-        description: "",
+        description: "Сладкий попкорн с насыщенным ягодным ароматом",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 4,
         name: "Вишня",
         taste: "Вишня",
-        price: '500.000',
+
         previewImage: image4,
         fullImage: image4,
-        description: "",
+        description: "Сочный вишнёвый вкус с приятной кислинкой",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 5,
         name: "Кокосовое молоко",
         taste: "Кокосовое молоко",
-        price: '500.000',
+
         previewImage: image5,
         fullImage: image5,
-        description: "",
+        description: "Нежный кокосовый вкус с кремовой сладостью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 6,
         name: "Клюква",
         taste: "Клюква",
-        price: '500.000',
+
         previewImage: image6,
         fullImage: image6,
-        description: "",
+        description: "Яркий кислый вкус с освежающим ягодным послевкусием",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 7,
         name: "Энергетик",
         taste: "Энергетик",
-        price: '500.000',
+
         previewImage: image7,
         fullImage: image7,
-        description: "",
+        description: "Бодрящий сладкий вкус с характерной напиточной ноткой",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 8,
         name: "Киви",
         taste: "Киви",
-        price: '500.000',
+
         previewImage: image8,
         fullImage: image8,
-        description: "",
+        description: "Свежий кисло-сладкий вкус с яркой фруктовой ноткой",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 9,
         name: "Лимон",
         taste: "Лимон",
-        price: '500.000',
+
         previewImage: image9,
         fullImage: image9,
-        description: "",
+        description: "Яркий цитрусовый вкус с освежающей кислинкой",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 10,
         name: "Лимонграсс",
         taste: "Лимонграсс",
-        price: '500.000',
+
         previewImage: image10,
         fullImage: image10,
-        description: "",
+        description: "Травяной вкус с лёгкой цитрусовой свежестью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 11,
         name: "Дыня",
         taste: "Дыня",
-        price: '500.000',
+
         previewImage: image11,
         fullImage: image11,
-        description: "",
+        description: "Сладкий сочный вкус с мягкой фруктовой свежестью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 12,
         name: "Груша",
         taste: "Груша",
-        price: '500.000',
+
         previewImage: image12,
         fullImage: image12,
-        description: "",
+        description: "Нежный сладкий вкус с лёгкой медовой ноткой",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 13,
         name: "Пина Колада",
         taste: "Пина Колада",
-        price: '500.000',
+
         previewImage: image13,
         fullImage: image13,
-        description: "",
+        description: "Тропический коктейль с кокосом и ананасовой сладостью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 14,
         name: "Малина",
         taste: "Малина",
-        price: '500.000',
+
         previewImage: image14,
         fullImage: image14,
-        description: "",
+        description: "Яркий ягодный вкус с приятной сладкой кислинкой",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 15,
         name: "Малиновые вафли",
         taste: "Малиновые вафли",
-        price: '500.000',
+
         previewImage: image15,
         fullImage: image15,
-        description: "",
+        description: "Десертный вкус вафель с нежной малиновой сладостью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
-    },{
+    }, {
         id: 16,
         name: "Земляника",
         taste: "Земляника",
-        price: '500.000',
+
         previewImage: image16,
         fullImage: image16,
-        description: "",
+        description: "Нежный лесной вкус с мягкой ягодной сладостью",
 
         variants: [
-            { weight: 30, price: '190.000' },
-            { weight: 100, price: '490.000' },
-            { weight: 250, price: '1100.000' }
+            {weight: 30, price: '190.000'},
+            {weight: 100, price: '490.000'},
+            {weight: 250, price: '1100.000'}
         ]
     }
 ];

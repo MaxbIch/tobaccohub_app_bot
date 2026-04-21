@@ -9,10 +9,9 @@ const blackburn = [
         id: 1,
         name: "Ananas Shock",
         taste: "Ананасовый шок",
-        price: '600.000',
         previewImage: image1,
         fullImage: image1,
-        description: "",
+        description: "Яркий кислый ананасовый вкус с мощной тропической свежестью",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -22,10 +21,9 @@ const blackburn = [
         id: 2,
         name: "Barberry Shock",
         taste: "Кислый барбарис",
-        price: '600.000',
         previewImage: image2,
         fullImage: image2,
-        description: "",
+        description: "Насыщенный барбарисовый вкус с выраженной кислинкой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -35,23 +33,21 @@ const blackburn = [
         id: 3,
         name: "Lemon Shock",
         taste: "Кислый лимон",
-        price: '600.000',
         previewImage: image3,
         fullImage: image3,
-        description: "",
+        description: "Резкий лимонный вкус с бодрящей кислой свежестью",
 
         variants: [
             { weight: 30, price: '200.000' },
             { weight: 200, price: '1.100.000' }
         ]
     },{
-        id: 3,
+        id: 4,
         name: "Raspberry Shock",
         taste: "Кислая малина",
-        price: '600.000',
         previewImage: image4,
         fullImage: image4,
-        description: "",
+        description: "Яркий малиновый вкус с насыщенной кислинкой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -61,10 +57,9 @@ const blackburn = [
         id: 5,
         name: "Epic Yogurt",
         taste: "Черничный йогурт",
-        price: '600.000',
         previewImage: image5,
         fullImage: image5,
-        description: "",
+        description: "Нежный сливочный вкус йогурта с черничной сладостью",
 
         variants: [
             { weight: 30, price: '200.000' },

@@ -17,10 +17,10 @@ const bonche = [
         id: 1,
         name: "Barberry",
         taste: "Барбарис",
-        price: '1.000.000',
+        
         previewImage: image1,
         fullImage: image1,
-        description: "",
+        description: "Сладкий барбарисовый вкус с лёгкой приятной кислинкой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -30,10 +30,10 @@ const bonche = [
         id: 2,
         name: "Black currant",
         taste: "Черная смородина",
-        price: '1.000.000',
+        
         previewImage: image2,
         fullImage: image2,
-        description: "",
+        description: "Насыщенный ягодный вкус с яркой кислинкой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -43,10 +43,10 @@ const bonche = [
         id: 3,
         name: "Caramel",
         taste: "Карамель",
-        price: '1.000.000',
+        
         previewImage: image3,
         fullImage: image3,
-        description: "",
+        description: "Мягкий сладкий вкус карамели с сливочными нотками",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -56,10 +56,10 @@ const bonche = [
         id: 4,
         name: "Cheesecake",
         taste: "Чизкейк",
-        price: '1.000.000',
+        
         previewImage: image4,
         fullImage: image4,
-        description: "",
+        description: "Нежный сливочный вкус десерта с сырной сладостью",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -69,10 +69,10 @@ const bonche = [
         id: 5,
         name: "Cherry",
         taste: "Вишня",
-        price: '1.000.000',
+        
         previewImage: image5,
         fullImage: image5,
-        description: "",
+        description: "Сочный вишнёвый вкус с лёгкой кислинкой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -82,10 +82,10 @@ const bonche = [
         id: 6,
         name: "Coffee",
         taste: "Кофе",
-        price: '1.000.000',
+        
         previewImage: image6,
         fullImage: image6,
-        description: "",
+        description: "Глубокий кофейный вкус с лёгкой горчинкой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -95,10 +95,10 @@ const bonche = [
         id: 7,
         name: "Cognac",
         taste: "Коньяк",
-        price: '1.000.000',
+        
         previewImage: image7,
         fullImage: image7,
-        description: "",
+        description: "Тёплый древесный вкус с лёгкой виноградной сладостью",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -108,10 +108,10 @@ const bonche = [
         id: 8,
         name: "Dark chocolate",
         taste: "Темный шоколад",
-        price: '1.000.000',
+        
         previewImage: image8,
         fullImage: image8,
-        description: "",
+        description: "Насыщенный шоколадный вкус с лёгкой горчинкой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -121,10 +121,10 @@ const bonche = [
         id: 9,
         name: "Grapefruit",
         taste: "Грейпфрут",
-        price: '1.000.000',
+        
         previewImage: image9,
         fullImage: image9,
-        description: "",
+        description: "Освежающий цитрусовый вкус с характерной горчинкой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -134,10 +134,10 @@ const bonche = [
         id: 10,
         name: "Lychee",
         taste: "Личи",
-        price: '1.000.000',
+        
         previewImage: image10,
         fullImage: image10,
-        description: "",
+        description: "Нежный тропический вкус с цветочной сладостью",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -147,10 +147,10 @@ const bonche = [
         id: 11,
         name: "Mango",
         taste: "Манго",
-        price: '1.000.000',
+        
         previewImage: image11,
         fullImage: image11,
-        description: "",
+        description: "Сладкий тропический вкус с мягкой фруктовой ноткой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -160,10 +160,10 @@ const bonche = [
         id: 12,
         name: "Melisa",
         taste: "Мелиса",
-        price: '1.000.000',
+        
         previewImage: image12,
         fullImage: image12,
-        description: "",
+        description: "Лёгкий травяной вкус с освежающей цитрусовой ноткой",
 
         variants: [
             { weight: 60, price: '650.000' },
@@ -173,10 +173,10 @@ const bonche = [
         id: 13,
         name: "Raspberry",
         taste: "Малина",
-        price: '1.000.000',
+        
         previewImage: image13,
         fullImage: image13,
-        description: "",
+        description: "Яркий ягодный вкус с приятной сладкой кислинкой",
 
         variants: [
             { weight: 60, price: '650.000' },

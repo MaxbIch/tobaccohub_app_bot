@@ -17,15 +17,14 @@ import image16 from "../../img/darkside/supernova.png";
 import image17 from "../../img/darkside/torpedo.png";
 import image18 from "../../img/darkside/tropicray.png";
 
-
 const darkside = [
     {
         id: 1,
         name: "Barvy orange",
         taste: "Апельсин",
-        price: '550.000',
+        
         previewImage: image1,
-        description: "",
+        description: "Сочный цитрусовый вкус с яркой сладкой свежестью",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -36,10 +35,10 @@ const darkside = [
         id: 2,
         name: "Bassberry",
         taste: "Бузина",
-        price: '550.000',
+        
         previewImage: image2,
         fullImage: image2,
-        description: "",
+        description: "Нежный ягодный вкус с лёгкой цветочной сладостью",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -50,10 +49,10 @@ const darkside = [
         id: 3,
         name: "Bittersweet",
         taste: "Тоник + лимон",
-        price: '550.000',
+        
         previewImage: image3,
         fullImage: image3,
-        description: "",
+        description: "Освежающий вкус тоника с лимонной кислинкой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -64,10 +63,10 @@ const darkside = [
         id: 4,
         name: "Bounty Hunter",
         taste: "Кокос",
-        price: '550.000',
+        
         previewImage: image4,
         fullImage: image4,
-        description: "",
+        description: "Мягкий кокосовый вкус с кремовой сладостью",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -78,10 +77,10 @@ const darkside = [
         id: 5,
         name: "Breaking Red",
         taste: " Гранат",
-        price: '550.000',
+        
         previewImage: image5,
         fullImage: image5,
-        description: "",
+        description: "Яркий гранатовый вкус с лёгкой терпкой кислинкой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -92,10 +91,10 @@ const darkside = [
         id: 6,
         name: "Darkside Cola",
         taste: "Кола",
-        price: '550.000',
+        
         previewImage: image6,
         fullImage: image6,
-        description: "",
+        description: "Классический вкус колы с карамельной сладостью",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -106,10 +105,10 @@ const darkside = [
         id: 7,
         name: "Cosmo Flower",
         taste: "Черника, сирень",
-        price: '550.000',
+        
         previewImage: image7,
         fullImage: image7,
-        description: "",
+        description: "Ягодный вкус с нежными цветочными нотками",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -120,10 +119,10 @@ const darkside = [
         id: 8,
         name: "Dark Passion",
         taste: "Маракуйя",
-        price: '550.000',
+        
         previewImage: image8,
         fullImage: image8,
-        description: "",
+        description: "Экзотический сладко-кислый вкус с яркой свежестью",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -134,10 +133,10 @@ const darkside = [
         id: 9,
         name: "Kalee Grapefruit",
         taste: "Грейпфрут",
-        price: '550.000',
+        
         previewImage: image9,
         fullImage: image9,
-        description: "",
+        description: "Освежающий цитрус с лёгкой характерной горчинкой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -148,10 +147,10 @@ const darkside = [
         id: 10,
         name: "Grape Core",
         taste: "Виноград",
-        price: '550.000',
+        
         previewImage: image10,
         fullImage: image10,
-        description: "",
+        description: "Сладкий виноградный вкус с сочной фруктовой ноткой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -162,10 +161,10 @@ const darkside = [
         id: 11,
         name: "Ice Granny",
         taste: "Яблоко",
-        price: '550.000',
+        
         previewImage: image11,
         fullImage: image11,
-        description: "",
+        description: "Свежий яблочный вкус с лёгкой охлаждающей ноткой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -176,10 +175,10 @@ const darkside = [
         id: 12,
         name: "Mango Lassi",
         taste: "Манго",
-        price: '550.000',
+        
         previewImage: image12,
         fullImage: image12,
-        description: "",
+        description: "Сладкий манго с мягкой сливочной текстурой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -190,10 +189,10 @@ const darkside = [
         id: 13,
         name: "Needles",
         taste: "Хвоя",
-        price: '550.000',
+        
         previewImage: image13,
         fullImage: image13,
-        description: "",
+        description: "Свежий хвойный вкус с прохладным лесным ароматом",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -204,10 +203,10 @@ const darkside = [
         id: 14,
         name: "Pomelow",
         taste: "Помело",
-        price: '550.000',
+        
         previewImage: image14,
         fullImage: image14,
-        description: "",
+        description: "Цитрусовый вкус с мягкой сладкой горчинкой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -218,10 +217,10 @@ const darkside = [
         id: 15,
         name: "Raspberry",
         taste: "Малина",
-        price: '550.000',
+        
         previewImage: image15,
         fullImage: image15,
-        description: "",
+        description: "Яркий малиновый вкус с приятной кислинкой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -232,10 +231,10 @@ const darkside = [
         id: 16,
         name: "Supernova",
         taste: "Холод",
-        price: '550.000',
+        
         previewImage: image16,
         fullImage: image16,
-        description: "",
+        description: "Интенсивный холодящий эффект с освежающей прохладой",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -246,10 +245,10 @@ const darkside = [
         id: 17,
         name: "Torpedo",
         taste: "Арбуз + Дыня",
-        price: '550.000',
+        
         previewImage: image17,
         fullImage: image17,
-        description: "",
+        description: "Сладкий микс арбуза и дыни с сочной свежестью",
 
         variants: [
             { weight: 30, price: '200.000' },
@@ -260,10 +259,10 @@ const darkside = [
         id: 18,
         name: "Tropic Ray",
         taste: "Карибский коктейль",
-        price: '550.000',
+        
         previewImage: image18,
         fullImage: image18,
-        description: "",
+        description: "Тропический микс с яркой сладкой фруктовой свежестью",
 
         variants: [
             { weight: 30, price: '200.000' },

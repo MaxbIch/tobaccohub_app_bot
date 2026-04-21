@@ -14,16 +14,15 @@ import image13 from "../../img/satyr/queen.png";
 import image14 from "../../img/satyr/tochkag.png";
 import image15 from "../../img/satyr/turbo.jpeg";
 
-
 const satyr = [
     {
         id: 1,
         name: "Ananas",
         taste: "Ананас",
-        price: '900.000',
+        
         previewImage: image1,
         fullImage: image1,
-        description: "",
+        description: "Сочный тропический вкус с яркой сладкой кислинкой",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -34,10 +33,10 @@ const satyr = [
         id: 2,
         name: "Angels tits",
         taste: "Коктейльная вишня",
-        price: '900.000',
+        
         previewImage: image2,
         fullImage: image2,
-        description: "",
+        description: "Сладкий вишнёвый вкус с лёгкой коктейльной ноткой",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -48,10 +47,10 @@ const satyr = [
         id: 3,
         name: "Bom Byao",
         taste: "Виноградная газировка",
-        price: '900.000',
+        
         previewImage: image3,
         fullImage: image3,
-        description: "",
+        description: "Сладкий вкус виноградной газировки с лёгкой свежестью",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -62,10 +61,10 @@ const satyr = [
         id: 4,
         name: "Burley cointreau",
         taste: "Берли на цитрусах",
-        price: '900.000',
+        
         previewImage: image4,
         fullImage: image4,
-        description: "",
+        description: "Табачный вкус с яркими цитрусовыми нотками",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -76,10 +75,10 @@ const satyr = [
         id: 5,
         name: "Dedushka",
         taste: "Лесная земляника",
-        price: '900.000',
+        
         previewImage: image5,
         fullImage: image5,
-        description: "",
+        description: "Нежный ягодный вкус с лёгкой лесной сладостью",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -90,10 +89,10 @@ const satyr = [
         id: 6,
         name: "Energy",
         taste: "Энергетик",
-        price: '900.000',
+        
         previewImage: image6,
         fullImage: image6,
-        description: "",
+        description: "Яркий вкус энергетика с бодрящей сладостью",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -104,10 +103,10 @@ const satyr = [
         id: 7,
         name: "GO! GO!",
         taste: "Ананас, малина",
-        price: '900.000',
+        
         previewImage: image7,
         fullImage: image7,
-        description: "",
+        description: "Фруктовый микс ананаса и малины с кислинкой",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -118,10 +117,10 @@ const satyr = [
         id: 8,
         name: "Good Lemon",
         taste: "Лимон",
-        price: '900.000',
+        
         previewImage: image8,
         fullImage: image8,
-        description: "",
+        description: "Яркий лимонный вкус с освежающей кислинкой",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -132,10 +131,10 @@ const satyr = [
         id: 9,
         name: "Jah Grapefruit",
         taste: "Грейпфрут",
-        price: '900.000',
+        
         previewImage: image9,
         fullImage: image9,
-        description: "",
+        description: "Освежающий цитрус с лёгкой горькой ноткой",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -146,10 +145,10 @@ const satyr = [
         id: 10,
         name: "Duebreck jagermeister",
         taste: "Ориентал на травах",
-        price: '900.000',
+        
         previewImage: image10,
         fullImage: image10,
-        description: "",
+        description: "Пряный травяной вкус с насыщенными восточными нотами",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -160,10 +159,10 @@ const satyr = [
         id: 11,
         name: "Lastochka",
         taste: "Сирень, крыжовник",
-        price: '900.000',
+        
         previewImage: image11,
         fullImage: image11,
-        description: "",
+        description: "Ягодно-цветочный вкус с лёгкой свежей кислинкой",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -174,10 +173,10 @@ const satyr = [
         id: 12,
         name: "Нежность",
         taste: "Обвивающая любовь",
-        price: '900.000',
+        
         previewImage: image12,
         fullImage: image12,
-        description: "",
+        description: "Мягкий сладкий вкус с нежным обволакивающим ароматом",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -188,10 +187,10 @@ const satyr = [
         id: 13,
         name: "Queen Anne's Revenge",
         taste: "Индийский берли",
-        price: '900.000',
+        
         previewImage: image13,
         fullImage: image13,
-        description: "",
+        description: "Насыщенный табачный вкус с пряными древесными нотами",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -202,10 +201,10 @@ const satyr = [
         id: 14,
         name: "Точка G",
         taste: "Клубничный малибу",
-        price: '900.000',
+        
         previewImage: image14,
         fullImage: image14,
-        description: "",
+        description: "Сладкий клубничный вкус с кокосовой коктейльной ноткой",
 
         variants: [
             { weight: 30, price: '250.000' },
@@ -216,10 +215,10 @@ const satyr = [
         id: 15,
         name: "Turbo",
         taste: "Апельсиновая шипучка",
-        price: '900.000',
+        
         previewImage: image15,
         fullImage: image15,
-        description: "",
+        description: "Газированный апельсиновый вкус с яркой сладкой кислинкой",
 
         variants: [
             { weight: 30, price: '250.000' },
