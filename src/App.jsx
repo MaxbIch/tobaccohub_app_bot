@@ -10,6 +10,7 @@ import starline from "./data/tobacco/starline";
 import satyr from "./data/tobacco/satyr";
 import huligan from "./data/tobacco/huligan";
 import endorfin from "./data/tobacco/endorfin";
+import close from "../src/img/close.png";
 
 // 👄 Жевательный табак
 import chew1 from "./data/chew/chew1";
@@ -490,7 +491,7 @@ function App() {
                 <div className={`cart-modal ${cartOpen ? "open" : ""}`}>
                     <div className="cart-header">
                         <h2>Корзина</h2>
-                        <button onClick={() => setCartOpen(false)}>✖</button>
+                        <button onClick={() => setCartOpen(false)}><img src={close} className="close" alt=""/></button>
                     </div>
 
                     {cart.map((item, i) => (
@@ -501,7 +502,7 @@ function App() {
                               {" — "}
                               {formatPrice(parsePrice(item.price || 0))} VND
                           </span>
-                            <button onClick={() => removeFromCart(i)}>❌</button>
+                            <button onClick={() => removeFromCart(i)}><img src={close} className="close" alt=""/></button>
                         </div>
                     ))}
 

@@ -20,7 +20,7 @@ import image18 from "../../img/darkside/tropicray.png";
 const darkside = [
     {
         id: 1,
-        name: "Barvy orange",
+        name: "Barvy Orange",
         taste: "Апельсин",
         
         previewImage: image1,
