@@ -12,7 +12,13 @@ const blackburn = [
         price: '600.000',
         previewImage: image1,
         fullImage: image1,
-        description: ""
+        description: "",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 2,
         name: "Barberry Shock",
@@ -20,7 +26,13 @@ const blackburn = [
         price: '600.000',
         previewImage: image2,
         fullImage: image2,
-        description: ""
+        description: "",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 3,
         name: "Lemon Shock",
@@ -28,7 +40,13 @@ const blackburn = [
         price: '600.000',
         previewImage: image3,
         fullImage: image3,
-        description: ""
+        description: "",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 3,
         name: "Raspberry Shock",
@@ -36,7 +54,13 @@ const blackburn = [
         price: '600.000',
         previewImage: image4,
         fullImage: image4,
-        description: ""
+        description: "",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 5,
         name: "Epic Yogurt",
@@ -44,7 +68,13 @@ const blackburn = [
         price: '600.000',
         previewImage: image5,
         fullImage: image5,
-        description: ""
+        description: "",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     }
 ];
 

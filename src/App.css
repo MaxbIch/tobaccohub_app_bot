@@ -449,3 +449,28 @@ body {
     padding: 15px;
   }
 }
+
+/* ===== ГРАММОВКИ ===== */
+.variants {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.variant-btn {
+  border: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+
+  background: #222;
+  color: #aaa;
+
+  cursor: pointer;
+}
+
+.variant-btn.active {
+  background: #fff;
+  color: #000;
+}

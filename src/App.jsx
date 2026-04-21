@@ -28,9 +28,13 @@ import satyrImg from "./img/tobaccologo/satyr.png";
 import huliganImg from "./img/tobaccologo/huligan.png";
 import endorfinImg from "./img/tobaccologo/endorf.png";
 
+
+
 // 🖼 Жевательный
 import chew1Img from "./img/chewlogo/turbo.jpg";
 import chew2Img from "./img/chewlogo/turbo.jpg";
+
+
 
 const tobaccoData = {
   Darkside: darkside,
@@ -71,6 +75,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedVariants, setSelectedVariants] = useState({});
 
   const tg = window.Telegram?.WebApp;
 
@@ -126,6 +131,13 @@ function App() {
     } else {
       setScreen("accessories");
     }
+  };
+
+  const selectVariant = (productId, variant) => {
+    setSelectedVariants((prev) => ({
+      ...prev,
+      [productId]: variant
+    }));
   };
 
   return (
@@ -399,37 +411,66 @@ function App() {
           )}
 
           {/* PRODUCT PAGE */}
-          {screen === "product" && selectedProduct && (
-              <>
-                <div className="back-wrapper">
-                  <button className="back" onClick={handleBackFromProduct}>
-                    ⬅ Назад
-                  </button>
-                </div>
+          {screen === "product" && selectedProduct && (() => {
+            const selected = selectedVariants[selectedProduct.id] || selectedProduct.variants?.[0];
 
-                <div className="product-page">
-                  <img src={selectedProduct.previewImage} className="big-img" />
+            return (
+                <>
+                  <div className="back-wrapper">
+                    <button className="back" onClick={handleBackFromProduct}>
+                      ⬅ Назад
+                    </button>
+                  </div>
 
-                  <h2>{selectedProduct.name}</h2>
-                  <p className="price">
-                    {formatPrice(parsePrice(selectedProduct.price))} VND
-                  </p>
-                  <p className="desc">{selectedProduct.description}</p>
+                  <div className="product-page">
+                    <img src={selectedProduct.previewImage} className="big-img" />
 
-                  <button
-                      className="add-main"
-                      onClick={() =>
+                    <h2>{selectedProduct.name}</h2>
+
+                    {/* ГРАММОВКИ */}
+                    <div className="variants big">
+                      {selectedProduct.variants?.map((v, i) => {
+                        const active = selected?.weight === v.weight;
+
+                        return (
+                            <button
+                                key={i}
+                                className={`variant-btn ${active ? "active" : ""}`}
+                                onClick={() => selectVariant(selectedProduct.id, v)}
+                            >
+                              {v.weight}г
+                            </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* ЦЕНА */}
+                    <p className="price">
+                      {formatPrice(parsePrice(selected?.price || selectedProduct.price))} VND
+                    </p>
+
+                    <p className="desc">{selectedProduct.description}</p>
+
+                    {/* КНОПКА */}
+                    <button
+                        className="add-main"
+                        onClick={() => {
+                          const chosen = selected || selectedProduct.variants?.[0];
+
                           addToCart({
                             ...selectedProduct,
+                            weight: chosen?.weight,
+                            price: chosen?.price,
                             brand: selectedBrand || "Допы"
-                          })
-                      }
-                  >
-                    Добавить в корзину
-                  </button>
-                </div>
-              </>
-          )}
+                          });
+                        }}
+                    >
+                      Добавить в корзину
+                    </button>
+                  </div>
+                </>
+            );
+          })()}
 
           {/* CART */}
           {cart.length > 0 && (
@@ -446,9 +487,13 @@ function App() {
 
             {cart.map((item, i) => (
                 <div key={i} className="cart-item">
-              <span>
-                {item.name} — {formatPrice(parsePrice(item.price))} VND
-              </span>
+      <span>
+        {item.name}
+        {item.weight ? ` (${item.weight}г)` : ""}
+        {" — "}
+        {formatPrice(parsePrice(item.price || 0))} VND
+      </span>
+
                   <button onClick={() => removeFromCart(i)}>❌</button>
                 </div>
             ))}

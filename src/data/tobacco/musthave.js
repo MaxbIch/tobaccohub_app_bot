@@ -43,126 +43,234 @@ const mustHave = [
         price: '600.000',
         previewImage: mh_alova,
         fullImage: mh_alova1,
-        description: "Грейпфрут + малина"
+        description: "Грейпфрут + малина",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 2,
         name: "Baikal",
         price: '600.000',
         previewImage: mh_baikal,
         fullImage: mh_baikal1,
-        taste: "Лесные травы и хвоя"
+        taste: "Лесные травы и хвоя",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 3,
         name: "Black currant",
         price: '600.000',
         previewImage: mh_blackCurrant,
         fullImage: mh_blackCurrant1,
-        taste: "Черная смородина"
+        taste: "Черная смородина",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 4,
         name: "Candy cow",
         price: '600.000',
         previewImage: mh_candyCow,
         fullImage: mh_candyCow1,
-        taste: "Карамель и сгущенное молоко"
+        taste: "Карамель и сгущенное молоко",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 5,
         name: "Cherry juice",
         price: '600.000',
         previewImage: mh_cheryJuice,
         fullImage: mh_cheryJuice1,
-        taste: "Вишнёвый сок"
+        taste: "Вишнёвый сок",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 6,
         name: "Cookie",
         price: '600.000',
         previewImage: mh_cookie,
         fullImage: mh_cookie1,
-        taste: "Печенье"
+        taste: "Печенье",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 7,
         name: "Jumango",
         price: '600.000',
         previewImage: mh_jumango,
         fullImage: mh_jumango1,
-        taste: "Манго, малина, мёд"
+        taste: "Манго, малина, мёд",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 8,
         name: "Mandarin",
         price: '600.000',
         previewImage: mh_mandarin,
         fullImage: mh_mandarin1,
-        taste: "Мандарин"
+        taste: "Мандарин",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 9,
         name: "Mango sling",
         price: '600.000',
         previewImage: mh_manggoSling,
         fullImage: mh_manggoSling1,
-        taste: "Напиток манго слинг"
+        taste: "Напиток манго слинг",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 10,
         name: "Maple pecan",
         price: '600.000',
         previewImage: mh_mapplePecan,
         fullImage: mh_mapplePecan1,
-        taste: "Выпечка и клюквенный сироп"
+        taste: "Выпечка и клюквенный сироп",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 11,
         name: "Marula",
         price: '600.000',
         previewImage: mh_marula,
         fullImage: mh_marula1,
-        taste: "Фрукт марула"
+        taste: "Фрукт марула",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 12,
         name: "Milky rice",
         price: '600.000',
         previewImage: mh_milkyRice,
         fullImage: mh_milkyRice1,
-        taste: "Молочная каша"
+        taste: "Молочная каша",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 13,
         name: "Orange Team",
         price: '600.000',
         previewImage: mh_orangeTeam,
         fullImage: mh_orangeTeam1,
-        taste: "Мандарин апельсин"
+        taste: "Мандарин апельсин",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 14,
         name: "Sweet peach",
         price: '600.000',
         previewImage: mh_peach,
         fullImage: mh_peach1,
-        taste: "Сладкий персик"
+        taste: "Сладкий персик",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 15,
         name: "Pineapple rings",
         price: '600.000',
         previewImage: mh_pineaooleRings,
         fullImage: mh_pineaooleRings1,
-        taste: "Ананасовые колечки"
+        taste: "Ананасовые колечки",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 16,
         name: "Sour tropic",
         price: '600.000',
         previewImage: mh_sourTropic,
         fullImage: mh_sourTropic1,
-        taste: "Тропические фрукты"
+        taste: "Тропические фрукты",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 17,
         name: "Strawberry-Lychee",
         price: '600.000',
         previewImage: mh_strawberryLychee,
         fullImage: mh_strawberryLychee1,
-        taste: "Земляника и личи"
+        taste: "Земляника и личи",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 18,
         name: "Tipsy",
         price: '600.000',
         previewImage: mh_tipsy,
         fullImage: mh_tipsy1,
-        taste: "Ягодный коктейль"
+        taste: "Ягодный коктейль",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     }
 ];
 

@@ -11,7 +11,13 @@ const huligan = [
         price: '900.000',
         previewImage: image1,
         fullImage: image1,
-        description: "Грейпфрут + малина"
+        description: "Грейпфрут + малина",
+
+        variants: [
+            { weight: 25, price: '200.000' },
+            { weight: 50, price: '350.000' },
+            { weight: 100, price: '600.000' }
+        ]
     },{
         id: 2,
         name: "BAR",
