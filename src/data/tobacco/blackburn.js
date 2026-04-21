@@ -15,9 +15,8 @@ const blackburn = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 200, price: '1.100.000' }
         ]
     },{
         id: 2,
@@ -29,9 +28,8 @@ const blackburn = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 200, price: '1.100.000' }
         ]
     },{
         id: 3,
@@ -43,9 +41,8 @@ const blackburn = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 200, price: '1.100.000' }
         ]
     },{
         id: 3,
@@ -57,9 +54,8 @@ const blackburn = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 200, price: '1.100.000' }
         ]
     },{
         id: 5,
@@ -71,9 +67,8 @@ const blackburn = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 200, price: '1.100.000' }
         ]
     }
 ];

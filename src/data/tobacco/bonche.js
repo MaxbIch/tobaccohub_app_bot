@@ -23,9 +23,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 2,
@@ -37,9 +36,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 3,
@@ -51,9 +49,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 4,
@@ -65,9 +62,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 5,
@@ -79,9 +75,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 6,
@@ -93,9 +88,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 7,
@@ -107,9 +101,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 8,
@@ -121,9 +114,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 9,
@@ -135,9 +127,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 10,
@@ -149,9 +140,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 11,
@@ -163,9 +153,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 12,
@@ -177,9 +166,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     },{
         id: 13,
@@ -191,9 +179,8 @@ const bonche = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 60, price: '650.000' },
+            { weight: 120, price: '1.300.000' },
         ]
     }
 ];

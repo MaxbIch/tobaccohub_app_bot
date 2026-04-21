@@ -11,12 +11,12 @@ const huligan = [
         price: '900.000',
         previewImage: image1,
         fullImage: image1,
-        description: "Грейпфрут + малина",
+        description: "Лимона и мята — освежающий цитрусовый вкус с прохладной мятной ноткой.",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '250.000' },
+            { weight: 100, price: '750.000' },
+            { weight: 200, price: '1.400.000' }
         ]
     },{
         id: 2,
@@ -25,7 +25,7 @@ const huligan = [
         price: '900.000',
         previewImage: image2,
         fullImage: image2,
-        description: "Грейпфрут + малина"
+        description: "Барбарисовая конфета — сладкий вкус барбариса с лёгкой кислинкой."
     },{
         id: 3,
         name: "HEALTHY",
@@ -33,7 +33,7 @@ const huligan = [
         price: '900.000',
         previewImage: image3,
         fullImage: image3,
-        description: "Грейпфрут + малина"
+        description: "Лимон + имбирь — бодрящий лимонный вкус с пряной имбирной остротой."
     },{
         id: 4,
         name: "TURBO",
@@ -41,7 +41,7 @@ const huligan = [
         price: '900.000',
         previewImage: image4,
         fullImage: image4,
-        description: "Грейпфрут + малина"
+        description: "Арбузно-дынная жвачка — сладкий микс арбуза и дыни с жвачкой."
     },
 ];
 

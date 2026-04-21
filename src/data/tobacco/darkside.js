@@ -28,9 +28,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1300.000' }
         ]
     },{
         id: 2,
@@ -42,9 +42,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 3,
@@ -56,9 +56,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 4,
@@ -70,9 +70,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 5,
@@ -84,9 +84,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 6,
@@ -98,9 +98,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 7,
@@ -112,9 +112,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 8,
@@ -126,9 +126,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 9,
@@ -140,9 +140,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 10,
@@ -154,9 +154,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 11,
@@ -168,9 +168,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 12,
@@ -182,9 +182,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 13,
@@ -196,9 +196,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 14,
@@ -210,9 +210,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 15,
@@ -224,9 +224,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 16,
@@ -238,9 +238,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 17,
@@ -252,9 +252,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     },{
         id: 18,
@@ -266,9 +266,9 @@ const darkside = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '200.000' },
+            { weight: 100, price: '550.000' },
+            { weight: 250, price: '1.300.000' }
         ]
     }
 

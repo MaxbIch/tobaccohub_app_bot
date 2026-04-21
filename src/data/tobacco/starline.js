@@ -26,9 +26,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 2,
@@ -40,9 +40,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 3,
@@ -54,9 +54,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 4,
@@ -68,9 +68,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 5,
@@ -82,9 +82,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 6,
@@ -96,9 +96,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 7,
@@ -110,9 +110,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 8,
@@ -124,9 +124,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 9,
@@ -138,9 +138,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 10,
@@ -152,9 +152,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 11,
@@ -166,9 +166,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 12,
@@ -180,9 +180,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 13,
@@ -194,9 +194,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 14,
@@ -208,9 +208,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 15,
@@ -222,9 +222,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     },{
         id: 16,
@@ -236,9 +236,9 @@ const starline = [
         description: "",
 
         variants: [
-            { weight: 25, price: '200.000' },
-            { weight: 50, price: '350.000' },
-            { weight: 100, price: '600.000' }
+            { weight: 30, price: '190.000' },
+            { weight: 100, price: '490.000' },
+            { weight: 250, price: '1100.000' }
         ]
     }
 ];
