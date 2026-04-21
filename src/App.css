@@ -194,6 +194,7 @@ body {
 .cart-item button img {
   width: 20px;
   height: 20px;
+  filter: brightness(0) saturate(100%) invert(21%) sepia(97%) saturate(7486%) hue-rotate(0deg);
 }
 .close {
   width: 30px;
@@ -465,6 +466,10 @@ body {
 .info_dop {
   font-size: 12px;
   color: red;
+}
+.cart-item button {
+  background: transparent;
+  border: none;
 }
 /* ================= АДАПТИВ ================= */
 @media (max-width: 500px) {
