@@ -114,7 +114,13 @@ function App() {
                 name: user?.first_name,
                 username: user?.username
             },
-            items: cart,
+            items: cart.map((item) => ({
+                name: item.weight
+                    ? `${item.name} (${item.weight}г)`
+                    : item.name,
+                price: item.price,
+                brand: item.brand
+            })),
             total: getTotal()
         };
 
