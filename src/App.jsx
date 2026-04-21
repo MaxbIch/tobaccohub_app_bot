@@ -314,6 +314,7 @@ function App() {
                                         <div className="info">
                                             <p>{p.name}</p>
                                             <div className="stock">{p.taste}</div>
+                                            <div className="info_dop">Узнать подробнее</div>
                                         </div>
 
                                     </div>
