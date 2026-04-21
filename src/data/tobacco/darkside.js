@@ -25,7 +25,6 @@ const darkside = [
         taste: "Апельсин",
         price: '550.000',
         previewImage: image1,
-        fullImage: image1,
         description: "",
 
         variants: [
