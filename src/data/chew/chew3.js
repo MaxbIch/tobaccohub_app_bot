@@ -47,35 +47,35 @@ const chew3 = [
         description: ""
     },{
         id: 6,
-        name: "",
-        taste: "",
+        name: "Cherry",
+        taste: "Slim",
         price: '300.000',
         previewImage: image6,
         description: ""
     },{
         id: 7,
-        name: "",
-        taste: "",
+        name: "Cold Dry",
+        taste: "Medium",
         price: '300.000',
         previewImage: image7,
         description: ""
     },{
         id: 8,
-        name: "",
+        name: "Crush",
         taste: "",
         price: '300.000',
         previewImage: image8,
         description: ""
     },{
         id: 9,
-        name: "",
+        name: "Blast",
         taste: "",
         price: '300.000',
         previewImage: image9,
         description: ""
     },{
         id: 10,
-        name: "",
+        name: "Toss",
         taste: "",
         price: '300.000',
         previewImage: image10,
