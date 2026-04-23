@@ -196,7 +196,7 @@ function App() {
                         {/* 🔥 HERO */}
                         <div className="hero">
                             <h1>🔥 Tobacco Hub</h1>
-                            <p>Лучшие табаки и аксессуары во Вьетнаме</p>
+                            <p>Лучшие табаки и аксессуары в Нячанге</p>
                         </div>
 
                         {/* 🔥 КАТЕГОРИИ */}
@@ -226,14 +226,13 @@ function App() {
 
                             <div className="about-card">
                                 <p>
-                                    Мы — Telegram-магазин с быстрой доставкой по Вьетнаму.
+                                    Мы — Telegram-магазин с быстрой доставкой по Нячанге.
                                     Только оригинальный табак и проверенные бренды.
                                 </p>
 
                                 <div className="about-features">
                                     <div>⚡ Быстрая доставка</div>
                                     <div>🔥 Топ бренды</div>
-                                    <div>💬 Поддержка 24/7</div>
                                 </div>
                             </div>
                         </div>
@@ -376,13 +375,13 @@ function App() {
                 {/* ACCESSORIES */}
                 {screen === "accessories" && (
                     <>
-                        <div className="back-wrapper accessories">
+                        <div className="back-wrapper">
                             <button className="back" onClick={() => setScreen("home")}>
                                 ⬅ Назад
                             </button>
                         </div>
 
-                        <div className="grid products">
+                        <div className="accessories grid products" style={{ whiteSpace: "pre-line" }}>
                             {accessories.map((p) => (
                                 <div
                                     key={p.id}
