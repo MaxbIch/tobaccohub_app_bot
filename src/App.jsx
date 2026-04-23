@@ -15,6 +15,7 @@ import close from "../src/img/close.png";
 // 👄 Жевательный табак
 import chew1 from "./data/chew/chew1";
 import chew2 from "./data/chew/chew2";
+import chew3 from "./data/chew/chew3";
 
 // 🧰 Допы
 import accessories from "./data/accessories/accessories";
@@ -31,8 +32,9 @@ import endorfinImg from "./img/tobaccologo/endorf.png";
 
 
 // 🖼 Жевательный
-import chew1Img from "./img/chewlogo/turbo.jpg";
-import chew2Img from "./img/chewlogo/turbo.jpg";
+import chew1Img from "./img/chewlogo/siberia.png";
+import chew2Img from "./img/chewlogo/odens.png";
+import chew3Img from "./img/chewlogo/corvus.png";
 
 
 const tobaccoData = {
@@ -60,11 +62,13 @@ const tobaccoImages = {
 const chewData = {
     Chew1: chew1,
     Chew2: chew2,
+    Chew3: chew3,
 };
 
 const chewImages = {
     Chew1: chew1Img,
     Chew2: chew2Img,
+    Chew3: chew3Img,
 };
 
 function App() {
@@ -204,8 +208,8 @@ function App() {
                             </div>
 
                             <div className="category-card chew" onClick={() => setScreen("chew")}>
-                                <div className="cat-icon">👄</div>
-                                <h3>Жевательный</h3>
+                                <div className="cat-icon">🧫</div>
+                                <h3>Жевательный табак</h3>
                                 <p>Сильный никотин</p>
                             </div>
 
@@ -271,7 +275,7 @@ function App() {
                             </button>
                         </div>
 
-                        <div className="grid brands-grid">
+                        <div className="grid brands-grid brands-grid-chew">
                             {Object.keys(chewData).map((brand) => (
                                 <div
                                     key={brand}
@@ -332,7 +336,7 @@ function App() {
                             </button>
                         </div>
 
-                        <div className="grid products">
+                        <div className="grid products chew">
                             {[...chewData[selectedBrand]]
                                 .sort((a, b) => a.name.localeCompare(b.name))
                                 .map((p) => (
@@ -372,7 +376,7 @@ function App() {
                 {/* ACCESSORIES */}
                 {screen === "accessories" && (
                     <>
-                        <div className="back-wrapper">
+                        <div className="back-wrapper accessories">
                             <button className="back" onClick={() => setScreen("home")}>
                                 ⬅ Назад
                             </button>

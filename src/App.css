@@ -259,23 +259,23 @@ body {
 }
 
 /* ПК — "рассыпано" */
-@media (min-width: 900px) {
-  .brands-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+/*@media (min-width: 900px) {*/
+/*  .brands-grid {*/
+/*    grid-template-columns: repeat(4, 1fr);*/
+/*  }*/
 
-  .brands-grid .card:nth-child(odd) {
-    transform: translateY(-20px);
-  }
+/*  .brands-grid .card:nth-child(odd) {*/
+/*    transform: translateY(-20px);*/
+/*  }*/
 
-  .brands-grid .card:nth-child(even) {
-    transform: translateY(20px);
-  }
+/*  .brands-grid .card:nth-child(even) {*/
+/*    transform: translateY(20px);*/
+/*  }*/
 
-  .brands-grid .card:nth-child(3n) {
-    transform: translateY(-40px);
-  }
-}
+/*  .brands-grid .card:nth-child(3n) {*/
+/*    transform: translateY(-40px);*/
+/*  }*/
+/*}*/
 
 /* планшет */
 @media (max-width: 900px) {
@@ -505,4 +505,8 @@ body {
 .variant-btn.active {
   background: #fff;
   color: #000;
+}
+
+.chew .card.product img {
+  height: 160px;
 }

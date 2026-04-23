@@ -1,9 +1,11 @@
+import image1 from "../../img/accessories/d-killer.png";
+
 const accessories = [
     {
-        id: "acc_1",
-        name: "Чаша Oblako",
-        price: 1200,
-
+        id: "1",
+        name: "Чаша D-Killer",
+        price: '550.000',
+        previewImage: image1,
         description: "Керамическая чаша"
     }
 ];
