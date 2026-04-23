@@ -489,16 +489,17 @@ body {
   flex-wrap: wrap;
   margin-top: 6px;
 }
+.accessories .grid.products {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px)) !important;
+}
 
 .variant-btn {
   border: none;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
-
   background: #222;
   color: #aaa;
-
   cursor: pointer;
 }
 
