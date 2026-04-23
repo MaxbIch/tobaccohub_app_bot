@@ -381,37 +381,58 @@ function App() {
                             </button>
                         </div>
 
-                        <div className="accessories grid products" style={{ whiteSpace: "pre-line" }}>
-                            {accessories.map((p) => (
-                                <div
-                                    key={p.id}
-                                    className="card product"
-                                    onClick={() => {
-                                        setSelectedProduct(p);
-                                        setScreen("product");
-                                    }}
-                                >
-                                    <img src={p.previewImage}/>
+                        <div className="accessories grid products">
+                            {accessories.map((p) => {
+                                const hasVariants = Array.isArray(p.variants) && p.variants.length > 0;
+                                const defaultVariant = hasVariants ? p.variants[0] : null;
 
-                                    <div className="info">
-                                        <p>{p.name}</p>
-                                        <div className="stock">{p.taste}</div>
-                                        <div className="price">
-                                            {formatPrice(parsePrice(p.price))} VND
-                                        </div>
-                                    </div>
-
-                                    <button
-                                        className="add-btn"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            addToCart(p);
+                                return (
+                                    <div
+                                        key={p.id}
+                                        className="card product"
+                                        onClick={() => {
+                                            setSelectedProduct(p);
+                                            setScreen("product");
                                         }}
                                     >
-                                        +
-                                    </button>
-                                </div>
-                            ))}
+                                        <img src={p.previewImage} alt={p.name} />
+
+                                        <div className="info">
+                                            <p>{p.name}</p>
+
+                                            {p.taste && (
+                                                <div className="stock">{p.taste}</div>
+                                            )}
+
+                                            <div className="price">
+                                                {formatPrice(
+                                                    parsePrice(
+                                                        defaultVariant?.price || p.price
+                                                    )
+                                                )}{" "}
+                                                VND
+                                            </div>
+                                        </div>
+
+                                        <button
+                                            className="add-btn"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+
+                                                addToCart({
+                                                    ...p,
+                                                    price: defaultVariant?.price || p.price,
+                                                    variant: defaultVariant?.label || null,
+                                                    weight: null,
+                                                    brand: "Допы"
+                                                });
+                                            }}
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </>
                 )}
@@ -419,6 +440,7 @@ function App() {
                 {/* PRODUCT PAGE */}
                 {screen === "product" && selectedProduct && (() => {
                     const selected = selectedVariants[selectedProduct.id] || selectedProduct.variants?.[0];
+                    const isAccessory = !!selectedProduct.variants?.[0]?.label;
 
                     return (
                         <>
@@ -436,7 +458,9 @@ function App() {
                                 {/* ГРАММОВКИ */}
                                 <div className="variants big">
                                     {selectedProduct.variants?.map((v, i) => {
-                                        const active = selected?.weight === v.weight;
+                                        const active = isAccessory
+                                            ? selected?.label === v.label
+                                            : selected?.weight === v.weight;
 
                                         return (
                                             <button
@@ -444,7 +468,9 @@ function App() {
                                                 className={`variant-btn ${active ? "active" : ""}`}
                                                 onClick={() => selectVariant(selectedProduct.id, v)}
                                             >
-                                                {v.weight}г
+                                                {isAccessory
+                                                    ? v.label
+                                                    : `${v.weight}г`}
                                             </button>
                                         );
                                     })}
@@ -460,20 +486,17 @@ function App() {
                                 <button
                                     className="add-main"
                                     onClick={() => {
-                                        // безопасный выбор
                                         const chosen =
                                             selected ||
                                             selectedVariants[selectedProduct.id] ||
                                             selectedProduct.variants?.[0] ||
-                                            {
-                                                weight: null,
-                                                price: selectedProduct.price
-                                            };
+                                            {};
 
                                         addToCart({
                                             ...selectedProduct,
-                                            weight: chosen.weight,
-                                            price: chosen.price,
+                                            weight: isAccessory ? null : chosen.weight,
+                                            variant: isAccessory ? chosen.label : null,
+                                            price: chosen.price || selectedProduct.price,
                                             brand: selectedBrand || "Допы"
                                         });
                                     }}
@@ -503,6 +526,7 @@ function App() {
                           <span>
                             {item.name}
                               {item.weight ? ` (${item.weight}г)` : ""}
+                              {item.variant ? ` (${item.variant})` : ""}
                               {" — "}
                               {formatPrice(parsePrice(item.price || 0))} VND
                           </span>

@@ -11,11 +11,14 @@ const accessories = [
     }, {
         id: "2",
         name: "Угли 25мм",
-        price: '100.000',
         previewImage: image2,
-        description: "1 шт - 5 VND, " +
-            "20 шт - 50 VND, " +
-            "1 кг - 100 VND",
+        description: "",
+        taste: "Узнать подробнее",
+        variants: [
+            { label: "1шт", price: "5.000" },
+            { label: "20шт", price: "50.000" },
+            { label: "1кг", price: "100.000" }
+        ]
     }
 ];
 
